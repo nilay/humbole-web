@@ -3,3 +3,12 @@
 Homestead.yaml
 Homestead.json
 .env
+.DS_Store
+.project
+.settings
+.metadata/
+/storage/
+.Trashes
+.sass-cache
+.tmp/
+Thumbs.db
