@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends("layouts.master")
+
+@section("additional_css")
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
@@ -34,7 +33,9 @@
                 font-size: 96px;
             }
         </style>
-    </head>
+@stop
+
+@section("content")
     <body>
         <div class="container">
             <div class="content">
@@ -43,3 +44,4 @@
         </div>
     </body>
 </html>
+@stop

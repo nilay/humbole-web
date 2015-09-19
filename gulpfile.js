@@ -22,3 +22,7 @@ elixir(function(mix) {
         'bootstrap.js'
     ]);
 });
+
+elixir(function(mix) {
+    mix.version('css/app.css');
+});
