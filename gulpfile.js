@@ -24,5 +24,5 @@ elixir(function(mix) {
 });
 
 elixir(function(mix) {
-    mix.version('css/app.css');
+    mix.version(['css/app.css','js/all.js']);
 });

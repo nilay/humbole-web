@@ -30,7 +30,7 @@
     <footer id="footer">
 	</footer>
 
-
+<script src="{{ elixir('js/all.js') }}"></script>
 @yield('additional_script')
 @yield('additional_script2')
 
