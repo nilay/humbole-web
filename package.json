@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "laravel-elixir": "^3.0.0",
-    "bootstrap-sass": "^3.0.0"
+    "bootstrap-sass": "^3.0.0",
+    "ng-infinite-scroll": "1.1.2"  
   }
 }

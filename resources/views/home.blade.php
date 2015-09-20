@@ -1,5 +1,8 @@
 @extends("layouts.master")
 
+@section("additional_css")
+<link rel="stylesheet" href="/css/grid.css">
+@stop
 @section("content")
 <section class="container container-grid" ng-app="app">
 	<div class="row" ng-controller="AppController" infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='0'>

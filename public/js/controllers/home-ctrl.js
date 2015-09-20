@@ -5,7 +5,6 @@ app.controller('AppController', function($scope, Reddit) {
 	
 	
 
-// Reddit constructor function to encapsulate HTTP and pagination logic
 app.factory('Reddit', function($http) {
   var Reddit = function() {
     this.items = [];
@@ -17,7 +16,7 @@ app.factory('Reddit', function($http) {
     if (this.busy) return;
     this.busy = true;
 
-    var url = "/json/dummy?after=" + this.after;
+    var url = "/api/v1/home-articles?after=" + this.after;
     $http.get(url).success(function(data) {
       for (var i = 0; i < data.length; i++) {
         this.items.push(data[i]);
