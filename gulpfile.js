@@ -19,7 +19,8 @@ elixir(function(mix) {
 elixir(function(mix) {
     mix.scripts([
         'jquery.js',
-        'bootstrap.js'
+        'bootstrap.js',
+        'angular.js'
     ]);
 });
 
