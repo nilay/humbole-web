@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('home');
 });
 
+// Pass server config variables to client
+Route::get('config.js', 'ConfigController@makeConfig');
+
 Route::group(array('prefix' => 'api/v1'), function()
 {
     Route::resource('home-articles', 'Api\ApiController@dummy');

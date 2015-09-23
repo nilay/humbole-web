@@ -11,7 +11,7 @@
 			<figure class="grid-thumbnail">
 				<span class="image-wrapper">
 				  <a href="#">
-					<img width="100%", height="100%" src="@{{album.thumb}}" ng-src="@{{album.thumb}}" alt="" />
+					<img width="100%", height="100%" src="@{{album.thumbnail_images.thumbnail.url}}" ng-src="@{{album.thumbnail_images.thumbnail.url}}" alt="" />
 				  </a>
 				</span>
 				<div class="social-sharing">
@@ -25,8 +25,8 @@
 				</div>
 			</figure>
 			<div class="image-description">
-				<h2 class="image-title"><a href="#">Lorem ipsum dolor sit amet </a></h2>
-				<div class="image-category"><a href="#">@{{album.name}}</a></div>
+				<h2 class="image-title"><a href="#">@{{album.title}}</a></h2>
+				<div class="image-category"><a href="#">@{{album.slug}}</a></div>
 			</div>
 		</div>
 	

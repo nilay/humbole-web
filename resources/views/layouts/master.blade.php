@@ -13,7 +13,6 @@
 	<meta content="website" property="og:type">
 	<meta content="http://www.humbole.com" property="og:url">
 	<meta content="Humbole" property="og:site_name">
-    
 	<!-- core CSS -->
 	<link rel="stylesheet" href="{{ elixir('css/app.css') }}">
 	@yield('additional_css')  
@@ -29,7 +28,7 @@
 
     <footer id="footer">
 	</footer>
-
+<script src="/config.js"></script>
 <script src="{{ elixir('js/all.js') }}"></script>
 @yield('additional_script')
 @yield('additional_script2')
