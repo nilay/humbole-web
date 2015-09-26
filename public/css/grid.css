@@ -21,12 +21,12 @@ body{font-family: 'Open Sans', sans-serif; font-size:14px;}
 .grid-item-featured .image-title a, .grid-item-featured .image-category a{color:#fff;}
 
 .social-sharing{background:rgba(0,0,0,.75); bottom:-48px; height:48px; left:0; padding:10px; position:absolute; right:0; text-align:center; transition:all .2s linear; z-index:1;}
-.social-sharing [class^="icon-"]{background:url(/images/icons-social.png); background-size:56px 56px; display:inline-block; height:28px; width:28px;}
+.social-sharing [class^="icon-"]{background:url(../images/icons-social.png); background-size:56px 56px; display:inline-block; height:28px; width:28px;}
 .social-sharing .icon-facebook{background-position:0 0;}
 .social-sharing .icon-twitter{background-position:-28px 0;}
 .social-sharing .icon-pinterest{background-position:0 -28px;}
 .social-sharing .icon-sharing{background-position:-28px -28px;}
-.social-sharing .icon-favorite{background:url(/images/icon-favorite.png); background-size:35px 56px; height:28px; width:35px;}
+.social-sharing .icon-favorite{background:url(../images/icon-favorite.png); background-size:35px 56px; height:28px; width:35px;}
 
 .grid-item :hover .social-sharing{bottom:0;}
 	
@@ -34,138 +34,7 @@ body{font-family: 'Open Sans', sans-serif; font-size:14px;}
 .social-sharing .nav-justified > li{display:table-cell; width:1%;}
 .social-sharing .nav-justified > li > a{padding:0;}
 .social-sharing .nav-justified > li > a:focus, .social-sharing .nav > li > a:hover, .social-sharing .nav > li > a:active{background:none; outline:none;}
- 
-.title {
-    border-bottom: 1px solid #ccc;
-    box-shadow: 0 1px 0 #f0f0f0;
-    margin-bottom: 20px;
-}
-h3.title {line-height:36px
-}
-.plan-container {
-    background:#f0f0f0;
-    color: #999;
-    margin: 0 0.5%;padding:0 5px;
-    text-align: center;border-radius:4px
-} 
- 
-.plan-title {
-    font-size: 18px;
-    padding: 20px 0;
-}
- 
-.plan-content ul{padding:0;list-style:none}
- 
-.plan-content {
-    min-height: 320px;background:#fff;
-}
-.plan-content ul li b{
-	color:#aaddee;
-	margin-right:5px;
-}
-.plan-footer{padding:20px 0}
 
- .widget-content {
-    background: none repeat scroll 0 0 #f8f8f8;
-    border-radius: 5px;
-    margin-top: 20px;
-    padding: 5px 20px 20px;
-}
-.profile-thumb, .thumbnails  {
-    list-style: outside none none;
-    padding:0;width:100%
-}
-.profile-thumb li{display:inline-block;width:48%;float:left}
-.profile-thumb li:nth-child(odd){margin-right:4%}
-.profile-thumb li:nth-child(even){margin-right:0%}
-.col-md-3  .thumbnails  li{width:100%}
-.col-md-3 .thumbnails  li{width:100%!important;float:none;}
-.col-md-3 h4{font-size:16px}
-a, .brand .cl-blue {
-    color: #8dd1ff;
-}
-.icon-edit {
-    background-position: -96px -72px;
-}
-.icon-white {
-    background-image: url("../img/glyphicons-halflings.png"); display: inline-block;
-    height: 15px;
-    width: 15px;margin-top:2px
-}
-/*---------- element ----------*/
-.breadcrumb{
-	padding:0px;
-	color:#333;
-}
-.breadcrumb li{
-	padding:10px 0px 8px  0px;
-	text-shadow:none;
-}
-.breadcrumb li a,.breadcrumb li.active span{
-	text-shadow:none;
-	margin:0px;
-	padding:10px 20px 9px 10px;
-	background:url('/images/icons/icon-muiten.png') right top no-repeat;
-	color:#0f5b8e;
-}
-.breadcrumb li a:hover,.breadcrumb li.active span{
-	background:url('/images/icons/icon-muiten-hv1.png') right top no-repeat;
-	text-decoration:none;
-	color:#0b7bc6;
-}
-.breadcrumb li.active span {
-	color:#333;
-}
-/*.breadcrumb{
-	border:none;
-	background-image: -moz-linear-gradient(top, #d3d3d3, #888);
-	background-image: -ms-linear-gradient(top, #d3d3d3, #888);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d3d3d3), to(#888));
-	background-image: -webkit-linear-gradient(top, #d3d3d3, #888);
-	background-image: -o-linear-gradient(top, #d3d3d3, #888);
-	background-image: linear-gradient(top, #d3d3d3, #888);
-}*/
- 
-.bg-info {
-    background-color: #d9edf7;
-}
- .not-for-tablet{display:none}
-.text-danger {
-    font-size: 11px;
-    position: relative;
-    top: -3px;
-    font-weight: bold;
-}
-div.imageSub img {
-    height: 88%;
-    margin-top: 5%;
-    width: 90%;
-    z-index: 1;
-}
-#notify-first .btn{margin-top:15px}
-#progressbox{width:100%!important}
-
-a.overlay{position:absolute;top:20px;display:none;width:80%;z-index:9999}
-
-.thumbnails  li.show-content:hover a.overlay{display:inline}
-.thumbnails  li.show-content:hover img.border-radius-top{opacity:0.1}
-.thumbnails  li.show-content .thumbnail{min-height:271px}
-.btn-group-xs > .btn, .btn-xs, .navbar-default .navbar-nav > li > a.btn-xs:focus, .navbar-default .navbar-nav > li > a.btn-xs:hover {
-    border-radius: 3px!important;
-    font-size: 12px!important;
-    line-height: 1.5!important;
-    padding: 1px 5px!important;color:#fff!important;margin-top:15px;background-color: #286090!important;
-    border-color: #204d74!important;
-}
-.inplace_save, .inplace_cancel, 
-.inplace_save:hover, .inplace_cancel:hover {
-    background-color: #337ab7;
-    border-color: #2e6da4;
-    color: #fff;
-}
-.mt10{margin-top:10px!important}
-#wall-post-item, .box-message-content{list-style:none}
-@media (min-width:768px) and (max-width: 1199px){.container{width:auto}}
 @media screen and (max-width: 500px) {
 	.grid-item{width:100%;}
 }
@@ -183,12 +52,7 @@ a.overlay{position:absolute;top:20px;display:none;width:80%;z-index:9999}
 	.grid-item-1 .social-sharing{bottom:auto; top:-48px;}
 	.grid-item-1:hover .social-sharing{bottom:auto; top:0;}
 }
-@media screen and (max-width: 767px) {
-.profile-thumb li{min-width:380px}
-}
-@media screen and (max-width: 450px) {
-.profile-thumb li{min-width:100%}
-}
+
 @media screen and (min-width: 768px) {
 	.grid-item{width:33.3333%;}
 	.grid-item-1{width:66.6667%;}
@@ -215,11 +79,8 @@ a.overlay{position:absolute;top:20px;display:none;width:80%;z-index:9999}
 	.grid-item-2, .grid-item-3{width:33.3333%;}
 	.grid-item-4, .grid-item-5, .grid-item-6{width:33.3333%;}
 	.grid-item-1 .grid-thumbnail{padding-top:67.39%;}
-	.not-for-tablet{display:block}
 }
 
-
- 
 @media screen and (min-width: 1200px){
-	.grid-item-1 .grid-thumbnail{padding-top:67.26%;}
+	.grid-item-1 .grid-thumbnail{padding-top:67.18%;}
 }
