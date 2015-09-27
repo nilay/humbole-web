@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 // Pass server config variables to client
 Route::get('config.js', 'ConfigController@makeConfig');
+Route::get('article/{slug}', 'ArticleController@index');
 
 Route::group(array('prefix' => 'api/v1'), function()
 {

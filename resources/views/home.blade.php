@@ -10,7 +10,7 @@
     	<div class="grid-item grid-item-@{{$index+1}}" ng-repeat="album in reddit.items">
 			<figure class="grid-thumbnail">
 				<span class="image-wrapper">
-				  <a href="#">
+				  <a href="/article/@{{album.slug}}">
 					<img width="100%", height="100%" src="@{{album.thumbnail_images.thumbnail.url}}" ng-src="@{{album.thumbnail_images.thumbnail.url}}" alt="" />
 				  </a>
 				</span>
@@ -25,8 +25,8 @@
 				</div>
 			</figure>
 			<div class="image-description">
-				<h2 class="image-title"><a href="#">@{{album.title}}</a></h2>
-				<div class="image-category"><a href="#">@{{album.slug}}</a></div>
+				<h2 class="image-title"><a href="/article/@{{album.slug}}">@{{album.title}}</a></h2>
+				<div class="image-category"><a href="/topic/@{{album.categories[0].slug}}">@{{album.categories[0].title}}</a></div>
 			</div>
 		</div>
 	
