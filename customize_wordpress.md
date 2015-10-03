@@ -74,7 +74,7 @@ Add include statement under wp-admin/includes/admin.php
 
 ```
 /** Custom Groups Administration API */
-require_once(ABSPATH . 'wp-admin/includes/groups.php’);
+require_once(ABSPATH . 'wp-admin/includes/groups.php');
 ```
 
 
