@@ -3,6 +3,7 @@ This application uses customize wordpress application as a backend CMS. Customiz
 
 Execute following sql against your wordpress database:
 
+```
 ALTER TABLE `wp_posts` ADD `post_gender` ENUM('universal','male','female','') NOT NULL DEFAULT 'universal' AFTER `comment_count`, ADD INDEX `gender` (`post_gender`);
 
 CREATE TABLE IF NOT EXISTS `wp_groups` (
@@ -25,6 +26,6 @@ CREATE TABLE IF NOT EXISTS `wp_group_relationships` (
 
 ALTER TABLE `wp_group_relationships`
   ADD PRIMARY KEY (`post_id`,`group_id`);
-
+```
 
 
