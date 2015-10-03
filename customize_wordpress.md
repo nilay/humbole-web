@@ -144,4 +144,4 @@ Add following codes in wp-includes/post.php under wp_insert_post function at lin
 	/***** end of custom code **********/
 
 
-``
+```
