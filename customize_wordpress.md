@@ -28,4 +28,43 @@ ALTER TABLE `wp_group_relationships`
   ADD PRIMARY KEY (`post_id`,`group_id`);
 ```
 
+Create wp-admin/includes/groups.php file and put following code in it.
 
+```
+<?php
+function wp_get_object_groups($object_id) {
+	global $wpdb;
+	$query = "SELECT group_id FROM wp_group_relationships where post_id = $object_id";
+	$selectedGroups = $wpdb->get_results( $query );
+	$selectedGroupIds = [];
+	foreach($selectedGroups as $selected)
+	{
+		$selectedGroupIds[] = $selected->group_id;
+	}
+	return $selectedGroupIds;
+}
+
+function wp_get_groups() {
+	global $wpdb;
+	$query = "SELECT * FROM wp_groups order by name";
+	return $wpdb->get_results( $query );
+}
+
+function wp_set_post_groups($post_id, $post_data){
+	global $wpdb;
+	$query = "delete FROM wp_group_relationships where post_id = $post_id";
+	$wpdb->get_results( $query );
+	
+	foreach($post_data as $data){
+		$wpdb->get_results( "insert into wp_group_relationships values($post_id, $data)");
+	}
+}
+
+function wp_set_post_gender($post_id, $post_data){
+	global $wpdb;
+	$query = "update wp_posts set post_gender='$post_data' where ID = $post_id";
+	$wpdb->get_results( $query );
+	
+}
+
+```
