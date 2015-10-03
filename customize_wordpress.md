@@ -128,7 +128,7 @@ Add following code in wp-admin/includes/meta-boxes.php under the end of `post_ca
 
 ```
 
-Add following codes in wp-includes/post.php under wp_insert_post function at line number 3416
+Add following codes in wp-includes/post.php under wp_insert_post function at line number 3416 just below where wp_set_post_categories function is called
 
 
 ```
