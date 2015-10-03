@@ -68,3 +68,33 @@ function wp_set_post_gender($post_id, $post_data){
 }
 
 ```
+
+Add following code at the end of wp-admin/includes/template.php
+
+```
+function wp_groups_checklist($post_id=null){
+	$groups = wp_get_groups();
+	$selectedGroups = $post_id ? wp_get_object_groups($post_id) : [];	
+	
+	foreach($groups as $group)
+	{
+		$checked = in_array($group->id, $selectedGroups) ? 'checked="checked"' : '';
+		echo "<li><label class=\"selectit\"><input type=\"checkbox\" {$checked} name=\"post_groups[]\" value=\"{$group->id}\"> {$group->name} </label></li>";
+	}
+	
+}
+
+function wp_gender_checklist($post_gender=null){
+	$gender_options = [
+		'universal'=>'Universal',
+		'male'=>'Male',
+		'female'=>'Female'
+	];
+	foreach($gender_options as $key => $option)
+	{
+		$checked = $key == $post_gender ? 'selected="selected"' : '';
+		echo "<option value='$key' {$checked} >{$option}</option>";
+	}
+	
+}
+```
