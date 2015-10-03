@@ -28,6 +28,7 @@ ALTER TABLE `wp_group_relationships`
   ADD PRIMARY KEY (`post_id`,`group_id`);
 ```
 
+
 Create wp-admin/includes/groups.php file and put following code in it.
 
 ```
@@ -68,6 +69,14 @@ function wp_set_post_gender($post_id, $post_data){
 }
 
 ```
+
+Add include statement under wp-admin/includes/admin.php
+
+```
+/** Custom Groups Administration API */
+require_once(ABSPATH . 'wp-admin/includes/groups.php’);
+```
+
 
 Add following code at the end of wp-admin/includes/template.php
 
