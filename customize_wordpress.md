@@ -98,3 +98,32 @@ function wp_gender_checklist($post_gender=null){
 	
 }
 ```
+
+Add following code in wp-admin/includes/meta-boxes.php under the end of `post_categories_meta_box` function.
+```
+	<?php /********* Custom code to add group field ********/?>
+	<h3 class="hndle ui-sortable-handle">
+		<span>Gender</span>
+	</h3>
+	
+	<div id="gender" class="categorydiv">
+		<select name="post_gender">
+			<?php wp_gender_checklist($post->post_gender);?>
+		</select>
+	</div>
+
+
+	<h3 class="hndle ui-sortable-handle">
+		<span>Groups</span>
+	</h3>
+
+
+	<div id="group-all" class="tabs-panel">
+		<ul id="<?php echo $tax_name; ?>checklist" data-wp-lists="list:<?php echo $tax_name; ?>" class="categorychecklist form-no-clear">
+			<?php wp_groups_checklist( $post->ID); ?>
+		</ul>
+	</div>
+
+	<?php /********* End of custom code ********/?>
+
+```
