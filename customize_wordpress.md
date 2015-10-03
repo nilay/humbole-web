@@ -127,3 +127,21 @@ Add following code in wp-admin/includes/meta-boxes.php under the end of `post_ca
 	<?php /********* End of custom code ********/?>
 
 ```
+
+Add following codes in wp-includes/post.php under wp_insert_post function at line number 3416
+
+
+```
+	/**** custom code to set groups for post ****/
+	if ( isset( $postarr['post_groups'] ) ) {
+		wp_set_post_groups( $post_ID, $postarr['post_groups'] );
+	}
+
+	if ( isset( $postarr['post_gender'] ) ) {
+		wp_set_post_gender( $post_ID, $postarr['post_gender'] );
+	}
+
+	/***** end of custom code **********/
+
+
+``
