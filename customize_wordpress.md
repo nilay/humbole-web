@@ -26,6 +26,18 @@ CREATE TABLE IF NOT EXISTS `wp_group_relationships` (
 
 ALTER TABLE `wp_group_relationships`
   ADD PRIMARY KEY (`post_id`,`group_id`);
+  
+  
+INSERT INTO `wp_groups` (`id`, `name`, `slug`) VALUES
+(1, 'Kids', 'kids'),
+(2, 'Teens', 'teens'),
+(3, 'Bachelors', 'bachelors'),
+(4, 'Techies', 'techies'),
+(5, '40+', 'fourty-plus'),
+(6, '60+', 'sixty-plus');
+
+  
+  
 ```
 
 
