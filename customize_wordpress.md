@@ -1,3 +1,4 @@
+# tweak wordpress to work with Humbole
 This application uses customize wordpress application as a backend CMS. Customization was aim to add two native fields for post object for advance filteration of content.
 
 
