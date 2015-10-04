@@ -166,3 +166,83 @@ Add following codes in wp-includes/post.php under wp_insert_post function at lin
 
 
 ```
+
+# tweak wordpress json api
+First install json api Wordpress plugin.
+Add following method under class JSON_API_Core_Controller in wp-content/plugins/json-api/controllers/core.php
+
+```
+  public function get_humboles(){
+	global $wpdb;
+	global $json_api;
+    $url = parse_url($_SERVER['REQUEST_URI']);
+    $query = wp_parse_args($url['query']);
+    unset($query['json']);
+    $count = @$query['count'] ? @$query['count'] : 10;
+    $gender_clause='';
+    switch(@$query['gender']){
+    	case "universal":
+    		$gender_clause = " and wp_posts.post_gender='universal'";
+    		break;
+    	case "female":
+    		$gender_clause = " and wp_posts.post_gender in ('universal', 'female')";
+    		break;
+    	case "female_only":
+     		$gender_clause = " and wp_posts.post_gender ='female'";
+    		break;
+    	case "male":
+     		$gender_clause = " and wp_posts.post_gender in ('universal', 'male')";
+    		break;
+    	case "male_only":
+     		$gender_clause = " and wp_posts.post_gender 'male'";
+    		break;    		
+    }
+    
+    $limit = @$query['offset'] ? " limit {$query['offset']}, $count" : " limit 0, $count" ;
+    $cat_table = "";
+    $cat_clause = '';
+
+    if(@$query['cat_slug']){
+    	$cat_table = ", wp_terms, wp_term_relationships";
+    	$cat_clause = " and wp_posts.ID=wp_term_relationships.object_id  " .
+    			"and wp_term_relationships.term_taxonomy_id = wp_terms.term_id " .
+    			"and wp_terms.slug='{$query['cat_slug']}'";
+    } 
+
+    
+    $group_table = '';
+    $group_clause = '';
+    if(@$query['group_slug']){
+    $group_table = ", wp_groups, wp_group_relationships";
+    $group_clause = "and wp_posts.ID=wp_group_relationships.post_id " .
+    		"and wp_group_relationships.group_id = wp_groups.id " .
+    		"and wp_groups.slug='{$query['group_slug']}'";
+    	
+    }
+    
+    $select = "select wp_posts.ID from wp_posts $cat_table $group_table " .
+    		"where post_status='publish' and post_type='post' " .
+    		"$cat_clause $group_clause $gender_clause $limit";
+    
+    
+     
+    $post_ids = $wpdb->get_results( $select );
+    
+    $ids= [];
+    foreach($post_ids as $post){
+    	$ids[] = $post->ID;
+    }
+    
+    
+    // No matching post found. pass 0 as id so api could compose response with 0 post
+    if(count($ids) == 0){
+    	$ids[] = 0;
+    }
+    
+    $posts = $json_api->introspector->get_posts(['post__in'=>$ids]);
+    $result = $this->posts_result($posts);
+    return $result;
+    
+  }
+
+```
