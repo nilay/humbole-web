@@ -59,10 +59,14 @@
 								</li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
-								<li class="active"><a href="#">Link</a></li>
-								<li><a href="#">Link</a></li>
+								<li class="active"><a href="/people/kids">Kids</a></li>
+								<li><a href="/people/teens">Teens</a></li>
+								<li><a href="/people/bachelors">Bachelors</a></li>
+								<li><a href="/people/techies">Techies</a></li>
+								<li><a href="/people/fourty-plus">40+</a></li>
+								<li><a href="/people/60-plus">60+</a></li>
 								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Me <span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="#">Action 1</a></li>
 										<li><a href="#">Action 2</a></li>
