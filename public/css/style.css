@@ -89,7 +89,7 @@ body{font-family: 'Open Sans', sans-serif; font-size:14px;}
 #social-header{background:#3c7dc9; padding:10px 0; transition:all .3s linear; -webkit-transition:all .3s linear;}
 .user-female #social-header{background:#f6358a;}
 #social-header a{color:#fff; font-size:18px; margin:0 1px;}
-#social-header a span{background:#bbb; border:2px solid #fff; border-radius:50%; display:inline-block; padding:5px; transition:all .3s linear; -webkit-transition:all .3s linear; vertical-align:middle;}
+#social-header a span{border:2px solid #fff; border-radius:50%; display:inline-block; padding:5px; transition:all .3s linear; -webkit-transition:all .3s linear; vertical-align:middle;}
 #social-header a:hover span{background:#999;}
 
 #site-header{background:#fff; margin-bottom:15px; transition:all .3s linear; -webkit-transition:all .3s linear;}
