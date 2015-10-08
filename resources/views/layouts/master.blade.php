@@ -85,9 +85,9 @@
 	@yield('content')
 
 	<footer id="site-footer">
-		<div class="container container-footer text-center">
+		<div class="container container-footer">
 			<hr />
-			<p>&copy; Copyright 2015.</p>
+			<p>About Us</p>
 		</div>
 	</footer>
 <script src="/config.js"></script>
