@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="{{ elixir('css/app.css') }}">
 	<link rel="stylesheet" href="/css/icomoon.css">
 	<link rel="stylesheet" href="/css/style.css">
+	
 	@yield('additional_css')  
 </head><!--/head-->
 
