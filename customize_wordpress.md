@@ -172,6 +172,12 @@ Add following codes in wp-includes/post.php under wp_insert_post function at lin
 First install json api Wordpress plugin.
 Add following method under class JSON_API_Core_Controller in wp-content/plugins/json-api/controllers/core.php
 
+After adding following function, you can call json api with following url param
+
+`
+/?json=get_humboles&cat_slug=jobs&group_slug=teens&gender=female&offset=0
+`
+
 ```
   public function get_humboles(){
 	global $wpdb;
