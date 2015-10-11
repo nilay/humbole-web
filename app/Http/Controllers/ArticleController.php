@@ -4,13 +4,14 @@ use App\Http\Controllers\Controller;
 use App\Models\Wordpress;
 use View;
 use Config;
-
+use Request;
 
 class ArticleController extends Controller {
 	
 
-    public function index($slug)
+    public function index(Request $request, $slug)
     {
+    	
     	// TODO: apply memcache here
     	// fetch article using REST API
     	$cmsContent = file_get_contents(config('humbole.CMS_API_URL') . '/?json=get_post&post_slug=' . $slug);

@@ -50,7 +50,7 @@
 							<ul class="nav navbar-nav">
 								<li>
 									<div class="onoffswitch">
-										<input ng-model="mfswitch" ng-click="genderChange();" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked />
+										<input ng-checked="{{@$_COOKIE['gender'] == 'female' ? 'false' : 'true'}}" checked="{{@$_COOKIE['gender'] == 'female' ? '' : 'checked'}}" ng-model="mfswitch" ng-click="genderChange();" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"/>
 										<label class="onoffswitch-label" for="myonoffswitch">
 											<span class="onoffswitch-inner"></span>
 											<span class="onoffswitch-switch"></span>
@@ -59,6 +59,7 @@
 								</li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
+								
 								<li ng-repeat="item in menu">
 									<a ng-click="assignActiveMenu(item.l);" href="@{{item.l}}">@{{item.t}}</a>
 								</li>
