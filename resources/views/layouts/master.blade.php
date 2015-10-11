@@ -50,7 +50,7 @@
 							<ul class="nav navbar-nav">
 								<li>
 									<div class="onoffswitch">
-										<input ng-model="mfswitch" ng-click="change()" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked />
+										<input ng-model="mfswitch" ng-click="genderChange();" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked />
 										<label class="onoffswitch-label" for="myonoffswitch">
 											<span class="onoffswitch-inner"></span>
 											<span class="onoffswitch-switch"></span>
@@ -60,7 +60,7 @@
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
 								<li ng-repeat="item in menu">
-									<a href="@{{item.l}}">@{{item.t}}</a>
+									<a ng-click="assignActiveMenu(item.l);" href="@{{item.l}}">@{{item.t}}</a>
 								</li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Me <span class="caret"></span></a>

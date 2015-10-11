@@ -27,6 +27,16 @@ app.factory('Reddit', function($http) {
     }.bind(this));
   };
 
+  Reddit.prototype.clear = function() {
+     this.items=[];
+     this.page = 1;
+  };
+  
+  Reddit.prototype.reStart = function(pageContext){
+  	 this.clear();
+  	 this.nextPage();
+  }
+
   return Reddit;
 });	
 

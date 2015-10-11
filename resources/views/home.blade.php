@@ -3,13 +3,11 @@
 @section("content")
 <section id="home-grid" class="container container-grid" ng-app="app">
 	<div class="row" ng-controller="AppController" infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='0'>
-    	
-    	<div class="grid-item grid-item-@{{$index+1}}" ng-repeat="album in reddit.items">
+    	<div id="gridWrap" class="grid-item grid-item-@{{$index+1}}" ng-repeat="album in reddit.items">
 			<figure class="grid-thumbnail">
 				<span class="image-wrapper">
 				  <a href="/article/@{{album.slug}}">
 					<img width="100%" height="100%" 
-						src="@{{$index==0 ? album.thumbnail_images['post-thumbnail'].url : $index==1 || $index==2 || $index==3 || $index==4 || $index==5 ? album.thumbnail_images.medium.url : album.thumbnail_images.thumbnail.url}}" 
 						ng-src="@{{$index==0 ? album.thumbnail_images['post-thumbnail'].url : $index==1 || $index==2 || $index==3 || $index==4 || $index==5 ? album.thumbnail_images.medium.url : album.thumbnail_images.thumbnail.url}}" 
 						alt="@{{$index}}" />
 				  </a>
