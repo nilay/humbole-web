@@ -29,3 +29,6 @@ app.factory('Reddit', function($http) {
 
   return Reddit;
 });	
+
+angular.bootstrap(document.getElementById("home-grid"),['app']);
+

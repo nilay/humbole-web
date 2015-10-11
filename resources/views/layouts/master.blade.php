@@ -32,9 +32,9 @@
 			</div>
 		</header>
 		
-		<header id="site-header">
+		<header id="site-header" ng-app="headerApp" ng-controller="HeaderController">
 			<div class="container">
-				<nav class="navbar">
+				<nav class="navbar" >
 					<div class="container">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-navigation">
@@ -50,7 +50,7 @@
 							<ul class="nav navbar-nav">
 								<li>
 									<div class="onoffswitch">
-										<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked />
+										<input ng-model="mfswitch" ng-click="change()" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked />
 										<label class="onoffswitch-label" for="myonoffswitch">
 											<span class="onoffswitch-inner"></span>
 											<span class="onoffswitch-switch"></span>
@@ -59,12 +59,9 @@
 								</li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
-								<li class="active"><a href="/people/kids">Kids</a></li>
-								<li><a href="/people/teens">Teens</a></li>
-								<li><a href="/people/bachelors">Bachelors</a></li>
-								<li><a href="/people/techies">Techies</a></li>
-								<li><a href="/people/fourty-plus">40+</a></li>
-								<li><a href="/people/60-plus">60+</a></li>
+								<li ng-repeat="item in menu">
+									<a href="@{{item.l}}">@{{item.t}}</a>
+								</li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Me <span class="caret"></span></a>
 									<ul class="dropdown-menu">
@@ -95,6 +92,7 @@
 <script type="text/javascript" src="/js/main.js"></script>
 @yield('additional_script')
 @yield('additional_script2')
+<script type="text/javascript" src="/js/controllers/header-ctrl.js"></script>
 
 
 </body>

@@ -1,7 +1,7 @@
 @extends("layouts.master")
 
 @section("content")
-<section class="container container-grid" ng-app="app">
+<section id="home-grid" class="container container-grid" ng-app="app">
 	<div class="row" ng-controller="AppController" infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='0'>
     	
     	<div class="grid-item grid-item-@{{$index+1}}" ng-repeat="album in reddit.items">
