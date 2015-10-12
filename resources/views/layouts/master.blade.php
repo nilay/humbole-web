@@ -50,7 +50,7 @@
 							<ul class="nav navbar-nav">
 								<li>
 									<div class="onoffswitch">
-										<input ng-checked="{{@$_COOKIE['gender'] == 'female' ? 'false' : 'true'}}" checked="{{@$_COOKIE['gender'] == 'female' ? '' : 'checked'}}" ng-model="mfswitch" ng-click="genderChange();" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"/>
+										<input ng-checked="{{@$_COOKIE['gender'] == 'female' ? 'false' : 'true'}}" {{@$_COOKIE['gender'] == 'female' ? '' : 'checked'}} ng-model="mfswitch" ng-click="genderChange();" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"/>
 										<label class="onoffswitch-label" for="myonoffswitch">
 											<span class="onoffswitch-inner"></span>
 											<span class="onoffswitch-switch"></span>
