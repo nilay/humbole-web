@@ -11,9 +11,17 @@
 |
 */
 
+/*
 Route::get('/', function () {
     return view('home');
 });
+*/
+
+$constraints = array(
+    'gender' => 'male|female',
+);
+
+Route::get('/{gender?}/{people?}/{topic?}', 'IndexController@index')->where('gender', $constraints['gender']);
 
 // Pass server config variables to client
 Route::get('config.js', 'ConfigController@makeConfig');

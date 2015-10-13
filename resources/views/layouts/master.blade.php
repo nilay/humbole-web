@@ -43,14 +43,15 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="#"><span class="site-logo"><img src="/images/logo.png" alt="Humbole" /></span></a>
+							<a class="navbar-brand" href="/"><span class="site-logo"><img src="/images/logo.png" alt="Humbole" /></span></a>
 						</div>
 						
 						<div class="collapse navbar-collapse" id="site-navigation">
+							@if(@$showGenderButton)
 							<ul class="nav navbar-nav">
 								<li>
 									<div class="onoffswitch">
-										<input ng-checked="{{@$_COOKIE['gender'] == 'female' ? 'false' : 'true'}}" {{@$_COOKIE['gender'] == 'female' ? '' : 'checked'}} ng-model="mfswitch" ng-click="genderChange();" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"/>
+										<input ng-checked="{{Session::get('gender') == 'female' ? 'false' : 'true'}}" {{Session::get('gender') == 'female' ? '' : 'checked'}} ng-model="mfswitch" ng-click="genderChange();" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"/>
 										<label class="onoffswitch-label" for="myonoffswitch">
 											<span class="onoffswitch-inner"></span>
 											<span class="onoffswitch-switch"></span>
@@ -58,10 +59,11 @@
 									</div>
 								</li>
 							</ul>
+							@endif
 							<ul class="nav navbar-nav navbar-right">
 								
 								<li ng-repeat="item in menu">
-									<a ng-click="assignActiveMenu(item.l);" href="@{{item.l}}">@{{item.t}}</a>
+									<a ng-click="assignActiveMenu(item);" href="@{{item.l}}">@{{item.t}}</a>
 								</li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Me <span class="caret"></span></a>
