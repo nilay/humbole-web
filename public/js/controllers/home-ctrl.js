@@ -14,11 +14,11 @@ app.factory('Reddit', function($http) {
     
   };
 
-  Reddit.prototype.nextPage = function(pageContext) {
+  Reddit.prototype.nextPage = function() {
     if (this.busy) return;
     this.busy = true;
 	var count = 10;
-    var url = this.constructUrl(pageContext );
+    var url = this.constructUrl();
     $http.get(url).success(function(data) {
       for(var i = 0; i< data.posts.length; i++) {
         this.items.push(data.posts[i]);
@@ -29,10 +29,10 @@ app.factory('Reddit', function($http) {
     }.bind(this));
   };
 
-  Reddit.prototype.constructUrl=function(context){
+  Reddit.prototype.constructUrl=function(){
   	var count = this.offset == 0 ? 14 : 12;
     var url = config.CMS_API_URL + "?json=get_humboles&count=" + count + "&offset=" + this.offset;
-	var pageContext = context? context : this.getPageContext();
+	var pageContext = this.getPageContext();
 	if(pageContext.gender){url+= "&gender=" +  pageContext.gender;}
 	if(pageContext.group){url+= "&group_slug=" +  pageContext.group;}
 	if(pageContext.topic){url+= "&cat_slug=" +  pageContext.topic;}
@@ -44,9 +44,9 @@ app.factory('Reddit', function($http) {
      this.offset = 0;
   };
   
-  Reddit.prototype.reStart = function(pageContext){
+  Reddit.prototype.reStart = function(){
   	 this.clear();
-  	 this.nextPage(pageContext);
+  	 this.nextPage();
   }
   
   
