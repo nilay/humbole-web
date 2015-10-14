@@ -51,20 +51,11 @@ app.factory('Reddit', function($http) {
   
   
   Reddit.prototype.getPageContext = function(){
-  	var pageContext;
-  	var scp = angular.element(document.getElementById("site-header"));
-
-  	if(!scp){return;}
-    
-    scp = scp.scope();  
-    if(scp.$$phase) {
-	  return null;
-	}
-      
-    scp.$apply(function () {
-        pageContext = scp.getPageContext();
-    });
-    return pageContext;
+  	var gender = $('.onoffswitch-checkbox').is(':checked') ? 'male' : 'female';
+    var pathArray = window.location.pathname.split( '/' );
+    var group =  pathArray[2] ? pathArray[2] : null;
+    var topic =  pathArray[3] ? pathArray[3] : null;
+  	return {'gender': gender, 'group': group, 'topic':topic};
   }
   
   return Reddit;

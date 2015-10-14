@@ -24,25 +24,11 @@ angular.module('headerApp',[])
   
   $scope.menu = getMenuItems();
   
-  $scope.assignActiveMenu = function(menuItem){ 
-  	activeMenu = menuItem.l;
-  };
-  
-  $scope.getActiveMenu = function(){
-  	return activeMenu;
-  }
-  
   $scope.getGender = function(){
   	//return $scope.mfswitch ? 'male' : 'female';
   	return $('.onoffswitch-checkbox').is(':checked') ? 'male' : 'female';
   }
   
-  $scope.getPageContext = function(){
-    var pathArray = window.location.pathname.split( '/' );
-    var group =  pathArray[2] ? pathArray[2] : null;
-    var topic =  pathArray[3] ? pathArray[3] : null;
-  	return {'gender': $scope.getGender(), 'group': group, 'topic':topic};
-  }
   
   $scope.refreshGrid = function(){
   	var scp = angular.element(document.getElementById("gridWrap"));
