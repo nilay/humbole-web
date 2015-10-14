@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="{{ elixir('css/app.css') }}">
 	<link rel="stylesheet" href="/css/icomoon.css">
 	<link rel="stylesheet" href="/css/style.css">
+	<link rel="shortcut icon" href="/images/humbole.ico">
 	@yield('additional_css')  
 	<script src="{{ elixir('js/all.js') }}"></script>
 	
