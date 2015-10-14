@@ -63,7 +63,7 @@
 							<ul class="nav navbar-nav navbar-right">
 								
 								<li ng-repeat="item in menu">
-									<a ng-click="assignActiveMenu(item);" href="@{{item.l}}">@{{item.t}}</a>
+									<a href="@{{item.l}}">@{{item.t}}</a>
 								</li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Me <span class="caret"></span></a>

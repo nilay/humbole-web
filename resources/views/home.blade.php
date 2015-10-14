@@ -12,15 +12,6 @@
 						alt="@{{$index}}" />
 				  </a>
 				</span>
-				<div class="social-sharing">
-					<ul class="nav nav-justified">
-						<li><a href=""><span class="icon-favorite"></span></a></li>
-						<li><a href=""><span class="icon-facebook"></span></a></li>
-						<li><a href=""><span class="icon-twitter"></span></a></li>
-						<li><a href=""><span class="icon-pinterest"></span></a></li>
-						<li><a href=""><span class="icon-sharing"></span></a></li>
-					</ul>
-				</div>
 			</figure>
 			<div class="image-description">
 				<h2 class="image-title"><a href="/article/@{{album.slug}}">@{{album.title}}</a></h2>

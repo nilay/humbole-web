@@ -13,7 +13,7 @@ angular.module('headerApp',[])
   // change navigation menu based on gender selection	
   $scope.genderChange = function(){
   	$scope.menu = getMenuItems();
-  	// set cookies foe gender. 
+  	// set cookies for gender. 
   	var expires = new Date();
     expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
     document.cookie = 'gender=' + $scope.getGender() +';path=/'+ ';expires=' + expires.toUTCString();  	
@@ -25,10 +25,7 @@ angular.module('headerApp',[])
   $scope.menu = getMenuItems();
   
   $scope.assignActiveMenu = function(menuItem){ 
-
   	activeMenu = menuItem.l;
-  	//window.history.pushState('page2', menuItem.t, menuItem.l);
-  	$scope.refreshGrid();
   };
   
   $scope.getActiveMenu = function(){
@@ -36,23 +33,27 @@ angular.module('headerApp',[])
   }
   
   $scope.getGender = function(){
-  	return $scope.mfswitch ? 'male' : 'female';
+  	//return $scope.mfswitch ? 'male' : 'female';
+  	return $('.onoffswitch-checkbox').is(':checked') ? 'male' : 'female';
   }
   
   $scope.getPageContext = function(){
-  	return {'gender': $scope.getGender(), 'group': activeMenu, 'topic':activeTopic};
+    var pathArray = window.location.pathname.split( '/' );
+    var group =  pathArray[2] ? pathArray[2] : null;
+    var topic =  pathArray[3] ? pathArray[3] : null;
+  	return {'gender': $scope.getGender(), 'group': group, 'topic':topic};
   }
   
   $scope.refreshGrid = function(){
-  	// change url before refreshing grid
-  	
   	var scp = angular.element(document.getElementById("gridWrap"));
   	if(!scp){
   		return;
-  	}
-
+  	}  	
     scp = scp.scope();
-
+    if(scp.$$phase) {
+	  return null;
+	}
+    
     scp.$apply(function () {
         scp.reddit.reStart($scope.getPageContext());
     });
