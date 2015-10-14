@@ -33,8 +33,12 @@ app.factory('Reddit', function($http) {
   	var count = this.offset == 0 ? 14 : 12;
     var url = config.CMS_API_URL + "?json=get_humboles&count=" + count + "&offset=" + this.offset;
 	var pageContext = this.getPageContext();
+	
 	if(pageContext.gender){url+= "&gender=" +  pageContext.gender;}
-	if(pageContext.group){url+= "&group_slug=" +  pageContext.group;}
+	if(pageContext.group){
+		if(pageContext.group == "spinsters") pageContext.group = "bachelors";
+		url+= "&group_slug=" +  pageContext.group;
+	}
 	if(pageContext.topic){url+= "&cat_slug=" +  pageContext.topic;}
 	return url;	
   }
