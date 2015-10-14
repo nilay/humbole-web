@@ -18,6 +18,8 @@
 	<link rel="stylesheet" href="/css/icomoon.css">
 	<link rel="stylesheet" href="/css/style.css">
 	@yield('additional_css')  
+	<script src="{{ elixir('js/all.js') }}"></script>
+	
 </head><!--/head-->
 
 <body id="home" class="homepage" >
@@ -91,7 +93,6 @@
 		</div>
 	</footer>
 <script src="/config.js"></script>
-<script src="{{ elixir('js/all.js') }}"></script>
 <script type="text/javascript" src="/js/main.js"></script>
 @yield('additional_script')
 @yield('additional_script2')
