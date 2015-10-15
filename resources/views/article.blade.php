@@ -1,69 +1,78 @@
 @extends("layouts.master")
 
 @section("content")
+<style>
+article img {
+    max-width: 600px;
+}
+</style>
 
-<div class="page-content">
-<div class="wrapper">
-	<div class="left-content">
-   	 <div class="title-heading">
-      <h1 class="entry-title">{!! $articleDetails->post->title !!}</h1>
-      	
-      <div class="published-updated">Posted on September 26, 2015, 2:00 PM 
-      <span>Ingrid lunden <span class="color1">(</span><span class="small-font">@ingridlunden</span><span class="color1">)</span></span></div>
-      
-      
-      <ul class="share-icon">
-      		<li><div class="share">1200<br /><span>share</span></div></li>
-            <li class="fb"><a href=""><i class="fa fa-facebook"></i></a></li>
-            <li class="tw"><a href=""><i class="fa fa-twitter"></i></a></li>
-            <li class="gp"><a href=""><i class="fa fa-google-plus"></i></a></li>
-            <li class="pi"><a href=""><i class="fa fa-pinterest-square"></i></a></li>
-            <li class="en"><a href=""><i class="fa fa-envelope-o"></i></a></li>
-            <li class="li"><a href=""><i class="fa fa-linkedin"></i></a></li>
-            <li class="fs"><a href=""><i class="fa fa-foursquare"></i></a></li>
-        </ul>
-        <div class="pull-right next-story">Next Story</div>
-        <div class="clearfix"></div>
-       </div> 
-			<article>
-				{!! $articleDetails->post->content !!}
-			</article>
 
-    <div class="right-content">
-    	<div class="img-section-3">
-        	<img src="images/thumb1.jpg" width="285" height="190" alt="thumb1" />
-			<p class="img-caption">WATCH: This Is One Cold, Cold Dog
-            <br />
-            <a href="">Animal</a>
-            </p>
+		<section id="site-contents">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<h2 class="page-heading">{{ $articleDetails->post->title }}</h2>
+						<!--
+						<div class="media">
+							<div class="media-left">
+								<a href="#"><img class="media-object img-circle" src="http://placehold.it/40?text=A" alt="..."></a>
+							</div>
+							
+							<div class="media-body">
+								<h4 class="media-heading">Author Name</h4>
+								<p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit</small></p>
+							</div>
+							
+						</div>
+						-->
+						<p><img src="images/social-media-sharing-icons.jpg" alt="" /></p>
+
+						<article>
+							{!! $articleDetails->post->content !!}
+						</article>
+					</div>
+					
+					
+					
+					<aside class="col-md-4">
+					
+						<div class="grid-item">
+							<figure class="grid-thumbnail">
+								<span class="image-wrapper"><a href="#"><img alt="" src="images/img-thumbnail-4.jpg"></a></span>
+							</figure>
+							<div class="image-description">
+								<h2 class="image-title"><a href="#">Vivamus ut nunc et sapien tristique iaculis</a></h2>
+								<div class="image-category"><a href="#">Animals</a></div>
+							</div>
+						</div>
+				
+					</aside>
+				</div>
+            </div>
             
-      </div>
-  </div>
-    <div class="clearfix"></div>
-</div>
-</div>
+            
+            
+			<section class="container container-grid">
+				<h3>Featured</h3>
+				<div class="row">
+					<div class="grid-item grid-item-4">
+						<figure class="grid-thumbnail">
+							<span class="image-wrapper"><a href="#"><img alt="" src="images/img-thumbnail-4.jpg"></a></span>
+						</figure>
+						<div class="image-description">
+							<h2 class="image-title"><a href="#">Vivamus ut nunc et sapien tristique iaculis</a></h2>
+							<div class="image-category"><a href="#">Animals</a></div>
+						</div>
+					</div>
 
-
-
-
-
-
-<section class="container>
-	<div class="container-fixed-width">
-		<div class="row">
-			<div class="col-lg-8 col-md-8 col-sm-8">
-				<article>
-					<h1>{!! $articleDetails->post->title !!}</h1>
-					{!! $articleDetails->post->content !!}
-				</article>
-			
-			</div>
-			
-			<div class="col-lg-4 col-md-4 col-sm-4">
-			
-			</div>
+				</div>
+			</section>
 		</div>
-	</div>
-</section>
+	</section>
+
+
+
+
 @stop
 
