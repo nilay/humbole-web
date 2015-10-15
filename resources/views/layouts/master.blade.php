@@ -50,7 +50,6 @@
 						</div>
 						
 						<div class="collapse navbar-collapse" id="site-navigation">
-							@if(@$showGenderButton)
 							<ul class="nav navbar-nav">
 								<li>
 									<div class="onoffswitch">
@@ -62,7 +61,6 @@
 									</div>
 								</li>
 							</ul>
-							@endif
 							<ul class="nav navbar-nav navbar-right">
 								
 								<li ng-repeat="item in menu">

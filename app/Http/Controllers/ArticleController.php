@@ -12,11 +12,12 @@ class ArticleController extends Controller {
     public function index(Request $request, $slug)
     {
     	
+    	$this->setGender();
+    	
     	// TODO: apply memcache here
     	// fetch article using REST API
     	$cmsContent = file_get_contents(config('humbole.CMS_API_URL') . '/?json=get_post&post_slug=' . $slug);
 		$cmsContentDecoded = json_decode($cmsContent);
-		//print_r($cmsContentDecoded->post); die;
 		        
         return view('article', ['articleDetails'=>$cmsContentDecoded]);
     }
