@@ -187,25 +187,32 @@ After adding following function, you can call json api with following url param
     unset($query['json']);
     $count = @$query['count'] ? @$query['count'] : 10;
     $gender_clause='';
+    $score_generator_select='wp_posts.post_modified as score';		// this will determine the post display order
     switch(@$query['gender']){
     	case "universal":
     		$gender_clause = " and wp_posts.post_gender='universal'";
+    		$score_generator_select = " wp_posts.post_modified as score";
     		break;
     	case "female":
     		$gender_clause = " and wp_posts.post_gender in ('universal', 'female')";
+    		$score_generator_select = " if(wp_posts.post_gender='female', 10, 0) - DATEDIFF(CURDATE(),wp_posts.post_modified) as score";
     		break;
     	case "female_only":
      		$gender_clause = " and wp_posts.post_gender ='female'";
+    		$score_generator_select = " wp_posts.post_modified as score";
     		break;
     	case "male":
      		$gender_clause = " and wp_posts.post_gender in ('universal', 'male')";
+    		$score_generator_select = " if(wp_posts.post_gender='male', 10, 0) - DATEDIFF(CURDATE(),wp_posts.post_modified) as score";
     		break;
     	case "male_only":
      		$gender_clause = " and wp_posts.post_gender 'male'";
+    		$score_generator_select = " wp_posts.post_modified as score";
     		break;    		
     }
     
     $limit = @$query['offset'] ? " limit {$query['offset']}, $count" : " limit 0, $count" ;
+    $order = " order by score desc";
     $cat_table = "";
     $cat_clause = '';
 
@@ -227,12 +234,11 @@ After adding following function, you can call json api with following url param
     	
     }
     
-    $select = "select wp_posts.ID from wp_posts $cat_table $group_table " .
+    $select = "select wp_posts.ID, $score_generator_select from wp_posts $cat_table $group_table " .
     		"where post_status='publish' and post_type='post' " .
-    		"$cat_clause $group_clause $gender_clause $limit";
+    		"$cat_clause $group_clause $gender_clause $order $limit";
     
     
-     
     $post_ids = $wpdb->get_results( $select );
     
     $ids= [];
@@ -247,7 +253,18 @@ After adding following function, you can call json api with following url param
     }
     
     $posts = $json_api->introspector->get_posts(['post__in'=>$ids]);
-    $result = $this->posts_result($posts);
+    
+    // rearrenge array as per post id sequence
+    $sortedPosts = []; 
+    foreach($ids as $id){
+    	foreach($posts as $post){
+    		if($post->id == $id){ 
+    			$sortedPosts[] = $post;
+    		}
+    	}
+    }
+    
+    $result = $this->posts_result($sortedPosts);
     return $result;
     
   }
