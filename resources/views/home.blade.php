@@ -9,7 +9,7 @@
 				  <a href="/article/@{{album.slug}}">
 					<img width="100%" height="100%" 
 						ng-src="@{{$index==0 ? album.thumbnail_images['post-thumbnail'].url : $index==1 || $index==2 || $index==3 || $index==4 || $index==5 ? album.thumbnail_images.medium.url : album.thumbnail_images.thumbnail.url}}" 
-						alt="@{{$index}}" />
+						/>
 				  </a>
 				</span>
 			</figure>

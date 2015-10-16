@@ -8,7 +8,7 @@ article img {
 </style>
 
 
-		<section id="site-contents">
+		<section id="site-contents" ng-app="articleApp" ng-controller="ArticleController">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8">
@@ -26,7 +26,7 @@ article img {
 							
 						</div>
 						-->
-						<p><img src="images/social-media-sharing-icons.jpg" alt="" /></p>
+						<p><img src="/images/social-media-sharing-icons.jpg" alt="" /></p>
 
 						<article>
 							{!! $articleDetails->post->content !!}
@@ -37,13 +37,17 @@ article img {
 					
 					<aside class="col-md-4">
 					
-						<div class="grid-item">
+						<div class="grid-item" ng-repeat="post in relatedPosts">
 							<figure class="grid-thumbnail">
-								<span class="image-wrapper"><a href="#"><img alt="" src="images/img-thumbnail-4.jpg"></a></span>
+								<span class="image-wrapper">
+									<a href="/article/@{{post.slug}}">
+										<img ng-src="@{{post.thumbnail_images.medium.url}}">
+									</a>
+								</span>
 							</figure>
 							<div class="image-description">
-								<h2 class="image-title"><a href="#">Vivamus ut nunc et sapien tristique iaculis</a></h2>
-								<div class="image-category"><a href="#">Animals</a></div>
+								<h2 class="image-title"><a href="/article/@{{post.slug}}">@{{post.title}}</a></h2>
+								<div class="image-category"><a href="/topic/@{{post.categories[0].slug}}">@{{album.categories[0].title}}</a></div>
 							</div>
 						</div>
 				
@@ -54,11 +58,11 @@ article img {
             
             
 			<section class="container container-grid">
-				<h3>Featured</h3>
+				<h3>Recent</h3>
 				<div class="row">
 					<div class="grid-item grid-item-4">
 						<figure class="grid-thumbnail">
-							<span class="image-wrapper"><a href="#"><img alt="" src="images/img-thumbnail-4.jpg"></a></span>
+							<span class="image-wrapper"><a href="#"><img ng-src=""></a></span>
 						</figure>
 						<div class="image-description">
 							<h2 class="image-title"><a href="#">Vivamus ut nunc et sapien tristique iaculis</a></h2>
@@ -75,4 +79,6 @@ article img {
 
 
 @stop
-
+@section("additional_script")
+<script src="/js/controllers/article-ctrl.js"></script>
+@stop
