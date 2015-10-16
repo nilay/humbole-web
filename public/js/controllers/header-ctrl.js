@@ -19,8 +19,20 @@ angular.module('headerApp',[])
     document.cookie = 'gender=' + $scope.getGender() +';path=/'+ ';expires=' + expires.toUTCString();  	
   	window.history.pushState('page2', $scope.getGender(), "/"+$scope.getGender());
   	$scope.refreshGrid();
-  };  
+  };
+  
+  $scope.getSelectedGroup = function(){
+  	var context = pageContext();
+  	return context.group;
+  }  
 
+	$scope.appliedClass = function(menuName) {
+	    if (menuName.split('/')[2] === $scope.getSelectedGroup()) {
+	        return "nav-selected";
+	    } else {
+	        return ""; 
+	    }
+	}
   
   $scope.menu = getMenuItems();
   

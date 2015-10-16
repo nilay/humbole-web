@@ -61,7 +61,7 @@
 							<ul class="nav navbar-nav navbar-right">
 								
 								<li ng-repeat="item in menu">
-									<a href="@{{item.l}}">@{{item.t}}</a>
+									<a ng-class="appliedClass(item.l)" href="@{{item.l}}">@{{item.t}}</a>
 								</li>
 								<!--
 								<li class="dropdown">

@@ -98,6 +98,7 @@ body{font-family: 'Open Sans', sans-serif; font-size:14px;}
 #site-header .navbar{border:0; border-radius:0; font-size:15px; font-weight:600; margin:0; min-height:38px; text-transform:uppercase;}
 #site-header .navbar a{color:#3c7dc9; transition:all .3s linear; -webkit-transition:all .3s linear;}
 #site-header .nav > li > a{border-bottom:3px solid transparent; padding-bottom:6px; padding-top:9px;}
+.nav-selected{background:none; border-color:initial !important;}
 #site-header .nav > li > a:focus, #site-header .nav > li > a:hover{background:none; border-color:initial;}
 #site-header .dropdown-menu > li > a{font-weight:600;}
 .user-female #site-header a{color:#f6358a;}

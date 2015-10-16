@@ -36,3 +36,11 @@ function headerSetting(){
 		$('#header-placeholder').remove();
 	}
 }
+
+pageContext = function(){
+  	var gender = $('.onoffswitch-checkbox').is(':checked') ? 'male' : 'female';
+    var pathArray = window.location.pathname.split( '/' );
+    var group =  pathArray[2] ? pathArray[2] : null;
+    var topic =  pathArray[3] ? pathArray[3] : null;
+  	return {'gender': gender, 'group': group, 'topic':topic};
+  }
