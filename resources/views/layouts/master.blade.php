@@ -26,12 +26,9 @@
 <body id="home" class="homepage" >
 		<header id="social-header" class="hidden-xs">
 			<div class="container text-right">
-				<a href="#"><span class="icomoon-facebook"></span></a>
-				<a href="#"><span class="icomoon-twitter"></span></a>
-				<a href="#"><span class="icomoon-linkedin"></span></a>
-				<a href="#"><span class="icomoon-youtube"></span></a>
-				<a href="#"><span class="icomoon-google-plus"></span></a>
-				<a href="#"><span class="icomoon-pinterest"></span></a>
+				<a href="https://www.facebook.com/humbole" target="_blank"><span class="icomoon-facebook"></span></a>
+				<a href="https://twitter.com/humbole2" target="_blank"><span class="icomoon-twitter"></span></a>
+				<a href="https://plus.google.com/u/1/b/110776927912026744773/110776927912026744773/posts?pageId=110776927912026744773" target="_blank"><span class="icomoon-google-plus"></span></a>
 			</div>
 		</header>
 		
