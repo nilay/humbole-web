@@ -37,6 +37,7 @@ app.factory('Reddit', function($http) {
 	if(pageContext.gender){url+= "&gender=" +  pageContext.gender;}
 	if(pageContext.group){
 		if(pageContext.group == "spinsters") pageContext.group = "bachelors";
+		if(pageContext.group == "ageless") pageContext.group = "fourty-plus";
 		url+= "&group_slug=" +  pageContext.group;
 	}
 	if(pageContext.topic){url+= "&cat_slug=" +  pageContext.topic;}

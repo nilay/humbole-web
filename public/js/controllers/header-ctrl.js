@@ -6,7 +6,7 @@ angular.module('headerApp',[])
 
 	var getMenuItems = function(){
 	  	var maleMenu =  [{'t': 'Kids','l': '/male/kids'},{'t': 'Teens','l': '/male/teens'},{'t': 'Bachelors','l': '/male/bachelors'},{'t': 'Techies','l': '/male/techies'},{'t': '40+','l': '/male/fourty-plus'},{'t': '60+','l': '/male/sixty-plus'}];
-		var femaleMenu =  [{'t': 'Kids','l': '/female/kids'},{'t': 'Teens','l': '/female/teens'},{'t': 'Spinsters','l': '/female/spinsters'},{'t': 'Mom','l': '/female/mom'},{'t': '40+','l': '/female/fourty-plus'},{'t': '60+','l': '/female/sixty-plus'}];
+		var femaleMenu =  [{'t': 'Kids','l': '/female/kids'},{'t': 'Teens','l': '/female/teens'},{'t': 'Spinsters','l': '/female/spinsters'},{'t': 'Mom','l': '/female/mom'},{'t': 'Ageless','l': '/female/ageless'}];
 		return $('.onoffswitch-checkbox').is(':checked') ? maleMenu : femaleMenu;
 	};
 
