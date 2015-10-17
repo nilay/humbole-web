@@ -24,6 +24,7 @@
 </head><!--/head-->
 
 <body id="home" class="homepage" >
+	{!! SnippetHelper::addGoogleAnalyticsScript() !!}
 		<header id="social-header" class="hidden-xs">
 			<div class="container text-right">
 				<a href="https://www.facebook.com/humbole" target="_blank"><span class="icomoon-facebook"></span></a>
