@@ -1,5 +1,31 @@
 @extends("layouts.master")
 
+@section("additional_meta")
+<meta content="{{$articleDetails->post->author->name}}" property="article:author">
+<meta content="http://www.facebook.com/humbole" property="article:publisher">
+@foreach($articleDetails->post->tags as $tag)
+	<meta content="{{$tag}}" property="article:tag">
+@endforeach
+<meta content="{{$articleDetails->post->thumbnail}}" property="og:image">
+<meta content="www.humbole.com" property="twitter:domain">
+<meta content="@humbole2" property="twitter:site">
+<meta content="{{$articleDetails->post->title}}" property="twitter:title">
+<meta content="{{$articleDetails->post->title}}" property="twitter:description">
+<meta content="@humbole2" property="twitter:creator">
+<meta content="summary_large_image" property="twitter:card">
+<meta content="{{$articleDetails->post->thumbnail}}" property="twitter:image">
+<meta content="{{$articleDetails->post->author->name}}" name="author">
+<meta content="{{$articleDetails->post->thumbnail_images->large->url}}" name="image">
+<meta content="{{$articleDetails->post->thumbnail}}" name="thumbnail">
+
+<meta keywords="{{$articleDetails->post->title}}">
+<meta content="{{$articleDetails->post->title}}" name="keywords">
+<meta content="{{$articleDetails->post->title}}" name="news_keywords">
+@stop
+
+
+
+
 @section("content")
 <style>
 article img {

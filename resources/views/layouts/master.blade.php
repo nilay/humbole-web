@@ -2,17 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Humbole | Your Daily Dose...</title>
+    <title>{{$title or 'Humbole | Your Daily Dose...'}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Your daily dose">
-    <meta name="author" content="">
-    <meta content="Humbole" name="title">
-	<meta content="Humbole" property="og:title">
-
-	<meta content="Humbole" property="og:description">
+    <meta name="description" content="{{$description or 'Your Daily Dose'}}">
+    <meta content="{{$title or 'Humbole | Your Daily Dose...'}}" name="title">
+	<meta content="{{$og_title or 'Humbole | Your Daily Dose...'}}" property="og:title">
+	<meta content="{{$og_description or 'Humbole | Your Daily Dose...'}}" property="og:description">
 	<meta content="website" property="og:type">
-	<meta content="http://www.humbole.com" property="og:url">
+	<meta content="{{$og_url or 'http://www.humbole.com'}}" property="og:url">
 	<meta content="Humbole" property="og:site_name">
+	@yield('additional_meta')
 	<!-- core CSS -->
 	<link rel="stylesheet" href="{{ elixir('css/app.css') }}">
 	<link rel="stylesheet" href="/css/icomoon.css">

@@ -19,7 +19,14 @@ class ArticleController extends Controller {
     	$cmsContent = file_get_contents(config('humbole.CMS_API_URL') . '/?json=get_post&post_slug=' . $slug);
 		$cmsContentDecoded = json_decode($cmsContent);
 		        
-        return view('article', ['articleDetails'=>$cmsContentDecoded]);
+        
+        return view('article', [
+        'title'=>$cmsContentDecoded->post->title,
+        'og_title'=>$cmsContentDecoded->post->title,
+        'og_url'=>'http://www.humbole.com/article/' . $cmsContentDecoded->post->slug,
+		'articleDetails'=>$cmsContentDecoded
+		
+		]);
     }
 
 }
