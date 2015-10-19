@@ -4,7 +4,7 @@
 <meta content="{{$articleDetails->post->author->name}}" property="article:author">
 <meta content="http://www.facebook.com/humbole" property="article:publisher">
 @foreach($articleDetails->post->tags as $tag)
-	<meta content="{{$tag}}" property="article:tag">
+	<meta content="{{$tag->slug}}" property="article:tag">
 @endforeach
 <meta content="{{$articleDetails->post->thumbnail}}" property="og:image">
 <meta content="www.humbole.com" property="twitter:domain">
