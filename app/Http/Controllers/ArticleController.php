@@ -21,7 +21,7 @@ class ArticleController extends Controller {
 		        
         
         return view('article', [
-        'title'=>$cmsContentDecoded->post->title,
+        'title'=>$cmsContentDecoded->post->title . ' | Humbole',
         'og_title'=>$cmsContentDecoded->post->title,
         'og_url'=>'http://www.humbole.com/article/' . $cmsContentDecoded->post->slug,
 		'articleDetails'=>$cmsContentDecoded

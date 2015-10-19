@@ -88,7 +88,7 @@ article img {
 			<section class="container container-grid">
 				<h3>Recent</h3>
 				<div class="row">
-					<div class="grid-item grid-item-4">
+					<div class="grid-item grid-item-4" ng-repeat="post in relatedPosts">
 						<figure class="grid-thumbnail">
 							<span class="image-wrapper"><a href="#"><img ng-src=""></a></span>
 						</figure>
