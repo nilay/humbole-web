@@ -35,7 +35,8 @@ INSERT INTO `wp_groups` (`id`, `name`, `slug`) VALUES
 (3, 'Bachelors', 'bachelors'),
 (4, 'Techies', 'techies'),
 (5, '40+', 'fourty-plus'),
-(6, '60+', 'sixty-plus');
+(6, '60+', 'sixty-plus'),
+(7, 'Mom', 'mom');
 
   
   
