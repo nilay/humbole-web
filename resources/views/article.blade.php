@@ -15,7 +15,7 @@
 <meta content="summary_large_image" property="twitter:card">
 <meta content="{{$articleDetails->post->thumbnail}}" property="twitter:image">
 <meta content="{{$articleDetails->post->author->name}}" name="author">
-<meta content="{{$articleDetails->post->thumbnail_images->large->url}}" name="image">
+<meta content="{{$articleDetails->post->thumbnail}}" name="image">
 <meta content="{{$articleDetails->post->thumbnail}}" name="thumbnail">
 
 <meta keywords="{{$articleDetails->post->title}}">
