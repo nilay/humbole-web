@@ -67,13 +67,15 @@ article img {
 							<figure class="grid-thumbnail">
 								<span class="image-wrapper">
 									<a href="/article/@{{post.slug}}">
-										<img ng-src="@{{post.thumbnail_images.medium.url}}">
+										<img width="100%" height="100%" ng-src="@{{post.thumbnail_images.medium.url}}">
 									</a>
 								</span>
 							</figure>
 							<div class="image-description">
 								<h2 class="image-title"><a href="/article/@{{post.slug}}">@{{post.title}}</a></h2>
-								<div class="image-category"><a href="/topic/@{{post.categories[0].slug}}">@{{album.categories[0].title}}</a></div>
+								<div class="image-category">
+									<a href="/topic/@{{post.categories[0].slug}}">@{{album.categories[0].title}}</a>
+								</div>
 							</div>
 						</div>
 				
