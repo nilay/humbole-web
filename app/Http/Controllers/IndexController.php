@@ -12,8 +12,9 @@ class IndexController extends Controller {
     public function index(Request $request, $gender=null, $people=null, $topic=null )
     {
     	//print "Gender=$gender, People=$people, Topic=$topic";
+    	$title = $people ? ucwords(str_replace("-", " ", $people)) . " | Humbole" : "Humbole | Your Daily Dose" ;
     	$this->setGender($gender);
-    	return view('home', ['showGenderButton'=>true]);
+    	return view('home', ['showGenderButton'=>true, 'title'=>$title]);
     }
 
 }
