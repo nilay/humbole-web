@@ -27,12 +27,6 @@
 
 
 @section("content")
-<style>
-article img {
-    max-width: 600px;
-}
-</style>
-
 
 		<section id="site-contents">
 			<div class="container">
