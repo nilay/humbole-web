@@ -33,7 +33,6 @@
 		</header>
 		
 		<header id="site-header" ng-controller="HeaderController">
-			<div class="container">
 				<nav class="navbar" >
 					<div class="container">
 						<div class="navbar-header">
@@ -77,7 +76,7 @@
 						</div>
 					</div>
 				</nav>
-			</div>
+			
 		</header>
 		
 		<!--<section id="site-contents" class="loading-contents">-->
