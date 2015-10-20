@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="utf-8">
     <title>{{$title or 'Humbole | Your Daily Dose...'}}</title>
@@ -32,7 +32,7 @@
 			</div>
 		</header>
 		
-		<header id="site-header" ng-app="headerApp" ng-controller="HeaderController">
+		<header id="site-header" ng-controller="HeaderController">
 			<div class="container">
 				<nav class="navbar" >
 					<div class="container">
@@ -91,9 +91,11 @@
 	</footer>
 <script src="/config.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/js/controllers/header-ctrl.js"></script>
+<script src="/js/ng-infinite-scroll.min.js"></script>
+
 @yield('additional_script')
 @yield('additional_script2')
-<script type="text/javascript" src="/js/controllers/header-ctrl.js"></script>
 
 
 </body>

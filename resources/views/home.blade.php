@@ -1,8 +1,8 @@
 @extends("layouts.master")
 
 @section("content")
-<section id="home-grid" class="container container-grid" ng-app="app">
-	<div class="row" ng-controller="AppController" infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='0'>
+<section id="home-grid" class="container container-grid">
+	<div class="row" ng-controller="HomeController" infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='0'>
     	<div id="gridWrap" class="grid-item grid-item-@{{$index+1}}" ng-repeat="album in reddit.items">
 			<figure class="grid-thumbnail">
 				<span class="image-wrapper">
@@ -22,9 +22,4 @@
 	 <div ng-show='reddit.busy'>Loading data...</div>
 	</div>
 </section>
-@stop
-
-@section("additional_script")
-<script src="/js/ng-infinite-scroll.min.js"></script>
-<script src="/js/controllers/home-ctrl.js"></script>
 @stop

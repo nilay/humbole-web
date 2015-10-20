@@ -34,7 +34,7 @@ article img {
 </style>
 
 
-		<section id="site-contents" ng-app="articleApp">
+		<section id="site-contents">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8">
@@ -113,7 +113,4 @@ article img {
 
 
 
-@stop
-@section("additional_script")
-<script src="/js/controllers/article-ctrl.js"></script>
 @stop
