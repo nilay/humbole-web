@@ -26,9 +26,9 @@
 	{!! SnippetHelper::addGoogleAnalyticsScript() !!}
 		<header id="social-header" class="hidden-xs">
 			<div class="container text-right">
-				<a href="https://www.facebook.com/humbole" target="_blank"><span class="icomoon-facebook"></span></a>
-				<a href="https://twitter.com/humbole2" target="_blank"><span class="icomoon-twitter"></span></a>
-				<a href="https://plus.google.com/u/1/b/110776927912026744773/110776927912026744773/posts?pageId=110776927912026744773" target="_blank"><span class="icomoon-google-plus"></span></a>
+				<a href="https://www.facebook.com/humbole" target="_blank"><span class="icon-facebook"></span></a>
+				<a href="https://twitter.com/humbole2" target="_blank"><span class="icon-twitter"></span></a>
+				<a href="https://plus.google.com/u/1/b/110776927912026744773/110776927912026744773/posts?pageId=110776927912026744773" target="_blank"><span class="icon-google-plus"></span></a>
 			</div>
 		</header>
 		
@@ -80,12 +80,13 @@
 			</div>
 		</header>
 		
-
-	@yield('content')
+		<!--<section id="site-contents" class="loading-contents">-->
+		<section id="site-contents">
+			@yield('content')
+		</section>
 
 	<footer id="site-footer">
 		<div class="container container-footer">
-			<hr />
 			<p>About Us</p>
 		</div>
 	</footer>

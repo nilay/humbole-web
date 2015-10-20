@@ -2,6 +2,8 @@
 
 body{font-family: 'Open Sans', sans-serif; font-size:14px;}
 
+img{max-width:100%;}
+
 .container-navigation, .container-footer{padding-left:7px; padding-right:7px;}
 .container-grid{/*max-width:986px;*/ overflow:hidden;}
 .container-grid > .row{margin-left:-7px; margin-right:-7px;}
@@ -120,7 +122,7 @@ body{font-family: 'Open Sans', sans-serif; font-size:14px;}
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner{margin-left:0;}
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch{right:0;}
 
-#site-header .navbar-toggle{background:#fff;}
+#site-header .navbar-toggle{background:#fff; margin-right:0;}
 #site-header .navbar-toggle .icon-bar{background:#3c7dc9;}
 .user-female #site-header .navbar-toggle .icon-bar{background:#f6358a;}
 
@@ -130,6 +132,22 @@ body{font-family: 'Open Sans', sans-serif; font-size:14px;}
 .page-heading + .media{margin:15px 0;}
 aside .grid-item{float:none; padding:0px; position:relative; width:100%;}
 aside .grid-item + .grid-item{margin-top:15px;}
+
+#site-contents{margin:25px 0;}
+#site-contents.loading-contents{position:relative;}
+#site-contents.loading-contents:after{background:url('../images/preloader.gif') center no-repeat; content:""; height:100%; left:0; position:absolute; top:0; width:100%;}
+
+.article-social-sharing{font-size:24px; line-height:24px;}
+.article-social-sharing .sharing-count{border:1px solid #ccc; border-radius:2px; display:inline-block; font-size:12px; line-height:10px; margin-right:5px; padding:5px; text-align:center;}
+.article-social-sharing a{border:1px solid transparent; border-radius:2px; box-shadow:0 0 2px rgba(0,0,0,.2); display:inline-block; height:32px; padding:2px; text-align:center; text-decoration:none; text-shadow:1px 1px 1px rgba(0,0,0,.5); width:34px;}
+.article-social-sharing .icon-facebook{background:#45649D; border-color:#37578E; color:#fff;}
+.article-social-sharing .icon-twitter{background:#5BC9EE; border-color:#4AB7DB; color:#fff;}
+.article-social-sharing .icon-google-plus{background:#D53B2F; border-color:#C12D22; color:#fff;}
+.article-social-sharing .icon-envelope-o{background:#1D84D3; border-color:#1377C4; color:#fff; width:38px;}
+.article-social-sharing .icon-facebook:hover{background:#37578E;}
+.article-social-sharing .icon-twitter:hover{background:#4AB7DB;}
+.article-social-sharing .icon-google-plus:hover{background:#C12D22;}
+.article-social-sharing .icon-envelope-o:hover{background:#1377C4;}
 
 @media screen and (max-width:767px){
 	#site-header{background:#3c7dc9;}

@@ -46,7 +46,15 @@
 							
 						</div>
 						-->
-						<p><img src="/images/social-media-sharing-icons.jpg" alt="" /></p>
+						
+						<p class="article-social-sharing">
+							<span class="sharing-count"><strong>1005</strong><br />shares</span>
+							<a href="#" class="icon-facebook"></a>
+							<a href="#" class="icon-twitter"></a>
+							<a href="#" class="icon-google-plus"></a>
+							<a href="#" class="icon-envelope-o"></a>
+						</p>
+
 
 						<article>
 							{!! $articleDetails->post->content !!}

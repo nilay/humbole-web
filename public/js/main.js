@@ -22,6 +22,17 @@ $(function(){
 	$(window).bind('scroll', function(){
 		headerSetting()
 	})
+	
+	if($('#site-footer').length){
+		var footer = $('#site-footer');
+		footer.before('<div style="height:'+footer.outerHeight(true)+'px"></div>')
+	}
+	
+	if($('#site-contents').length){
+		var siteContents = $('#site-contents');
+		var contentsHeight = $(window).height() - ($('#social-header').outerHeight(true) + $('#site-header').outerHeight(true) + $('#site-footer').outerHeight(true))
+		siteContents.css({'min-height':contentsHeight});
+	}
 })
 
 function headerSetting(){
