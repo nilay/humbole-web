@@ -196,7 +196,7 @@ After adding following function, you can call json api with following url param
     		break;
     	case "female":
     		$gender_clause = " and wp_posts.post_gender in ('universal', 'female')";
-    		$score_generator_select = " if(wp_posts.post_gender='female', 10, 0) - DATEDIFF(CURDATE(),wp_posts.post_modified) as score";
+    		$score_generator_select = " if(wp_posts.post_gender='female', 2, 0) - DATEDIFF(CURDATE(),wp_posts.post_modified) as score";
     		break;
     	case "female_only":
      		$gender_clause = " and wp_posts.post_gender ='female'";
@@ -204,7 +204,7 @@ After adding following function, you can call json api with following url param
     		break;
     	case "male":
      		$gender_clause = " and wp_posts.post_gender in ('universal', 'male')";
-    		$score_generator_select = " if(wp_posts.post_gender='male', 10, 0) - DATEDIFF(CURDATE(),wp_posts.post_modified) as score";
+    		$score_generator_select = " if(wp_posts.post_gender='male', 2, 0) - DATEDIFF(CURDATE(),wp_posts.post_modified) as score";
     		break;
     	case "male_only":
      		$gender_clause = " and wp_posts.post_gender 'male'";
