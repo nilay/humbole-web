@@ -109,7 +109,7 @@ img{max-width:100%;}
 
 .site-logo{display:block; max-width:130px; transform:translateY(-55%); transform-origin:0 50%; transition:all 0.3s linear; -webkit-transform:translateY(-55%); -webkit-transform-origin:0 50%; -webkit-transition:all 0.3s linear;}
 .site-logo img{max-width:100%;}
-.user-scroll .site-logo{transform:translateY(-34%) scale(.6); -webkit-transform:translateY(-36%) scale(.6);}
+.user-scroll .site-logo{transform:translateY(-34%) scale(.6); -webkit-transform:translateY(-34%) scale(.6);}
 
 .onoffswitch{position:relative; width:95px; margin:8px 0 0; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none;}
 .onoffswitch-checkbox{display:none;}
@@ -160,7 +160,7 @@ aside .grid-item + .grid-item{margin-top:15px;}
 	#site-header .navbar a{color:#fff;}
 	#site-header .nav > li + li{border-top:1px solid rgba(255,255,255,.15);}
 	#site-header .nav a:hover, #site-header .nav .open > a, #site-header .nav .open > a:focus, #site-header .nav .open > a:hover, #site-header .nav > li > a:focus, #site-header .nav > li > a:hover{background:rgba(255,255,255,.15);}
-	.site-logo, .user-scroll .site-logo{transform:translateY(-30%) scale(.5); -webkit-transform:translateY(-40%) scale(.5);}
+	.site-logo, .user-scroll .site-logo{transform:translateY(-34%) scale(.5); -webkit-transform:translateY(-34%) scale(.5);}
 	
 	
 	#site-header .navbar-collapse{background:rgba(60,125,201,.9); display:block; height:auto!important; left:-100%; margin:0; position:absolute; transition:all .4s linear; width:100%; z-index:9;}
