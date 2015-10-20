@@ -105,7 +105,7 @@ img{max-width:100%;}
 #site-header .dropdown-menu > li > a{font-weight:600;}
 .user-female #site-header a{color:#f6358a;}
 .user-scroll #site-header{left:0; position:fixed; top:0; width:100%; z-index:999;}
-#site-header .navbar-brand{height:50px; padding:9px 0; margin-right:30px;}
+#site-header .navbar-brand{height:38px; padding:9px 0; margin-right:30px;}
 
 .site-logo{display:block; max-width:130px; transform:translateY(-55%); transform-origin:0 50%; transition:all 0.3s linear; -webkit-transform:translateY(-55%); -webkit-transform-origin:0 50%; -webkit-transition:all 0.3s linear;}
 .site-logo img{max-width:100%;}
@@ -162,7 +162,7 @@ aside .grid-item + .grid-item{margin-top:15px;}
 	#site-header .nav a:hover, #site-header .nav .open > a, #site-header .nav .open > a:focus, #site-header .nav .open > a:hover, #site-header .nav > li > a:focus, #site-header .nav > li > a:hover{background:rgba(255,255,255,.15);}
 	.site-logo, .user-scroll .site-logo{transform:translateY(-34%) scale(.5); -webkit-transform:translateY(-34%) scale(.5);}
 	
-	
+	#site-header .navbar-brand{height:50px;}
 	#site-header .navbar-collapse{background:rgba(60,125,201,.9); display:block; height:auto!important; left:-100%; margin:0; position:absolute; transition:all .4s linear; width:100%; z-index:9;}
 	#site-header .navbar-collapse.in{left:0;}
 	.user-female #site-header .navbar-collapse{background:rgba(246,53,138,.9);}
