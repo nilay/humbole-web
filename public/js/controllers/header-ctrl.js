@@ -33,7 +33,7 @@ app.factory('Reddit', function($http) {
   };
 
   Reddit.prototype.constructUrl=function(){
-  	var count = this.offset == 0 ? 14 : 12;
+  	var count = this.offset == 0 ? 18 : 16;
     var url = config.CMS_API_URL + "?json=get_humboles&count=" + count + "&offset=" + this.offset;
 	var pageContext = this.getPageContext();
 	
@@ -41,7 +41,7 @@ app.factory('Reddit', function($http) {
 	if(pageContext.group){
 		if(pageContext.group == "spinsters") pageContext.group = "bachelors";
 		if(pageContext.group == "ageless") pageContext.group = "fourty-plus";
-		if(pageContext.group == "career-woman") pageContext.group = "techies";
+		if(pageContext.group == "career-women") pageContext.group = "techies";
 		url+= "&group_slug=" +  pageContext.group;
 	}
 	if(pageContext.topic){url+= "&cat_slug=" +  pageContext.topic;}
@@ -76,7 +76,7 @@ app.controller('HeaderController', function($scope, hSharedService) {
 
 	var getMenuItems = function(){
 	  	var maleMenu =  [{'t': 'Kids','l': '/male/kids'},{'t': 'Teens','l': '/male/teens'},{'t': 'Bachelors','l': '/male/bachelors'},{'t': 'Techies','l': '/male/techies'},{'t': '40+','l': '/male/fourty-plus'},{'t': '60+','l': '/male/sixty-plus'}];
-		var femaleMenu =  [{'t': 'Kids','l': '/female/kids'},{'t': 'Teens','l': '/female/teens'},{'t': 'Spinsters','l': '/female/spinsters'},{'t': 'Career Woman','l': '/female/career-woman'},{'t': 'Mom','l': '/female/mom'},{'t': 'Ageless','l': '/female/ageless'}];
+		var femaleMenu =  [{'t': 'Kids','l': '/female/kids'},{'t': 'Teens','l': '/female/teens'},{'t': 'Spinsters','l': '/female/spinsters'},{'t': 'Career Women','l': '/female/career-women'},{'t': 'Mom','l': '/female/mom'},{'t': 'Ageless','l': '/female/ageless'}];
 		return $('.onoffswitch-checkbox').is(':checked') ? maleMenu : femaleMenu;
 	};
 
@@ -126,7 +126,6 @@ app.controller("RelatedController", function($scope, $http) {
   var url = config.CMS_API_URL + "?json=get_humboles&count=3&offset=0";
   $http.get(url).
     success(function(data, status, headers, config) {
-      console.log(data);
       $scope.relatedPosts = data.posts;
     }).
     error(function(data, status, headers, config) {
@@ -138,7 +137,6 @@ app.controller("RecentController", function($scope, $http) {
   var url = config.CMS_API_URL + "?json=get_humboles&count=9&offset=0";
   $http.get(url).
     success(function(data, status, headers, config) {
-      console.log(data);
       $scope.relatedPosts = data.posts;
     }).
     error(function(data, status, headers, config) {
