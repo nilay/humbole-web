@@ -64,7 +64,7 @@
 					
 					
 					<aside class="col-md-4" ng-controller="RelatedController">
-					
+						<h3>Related Articles</h3>
 						<div class="grid-item" ng-repeat="post in relatedPosts">
 							<figure class="grid-thumbnail">
 								<span class="image-wrapper">
@@ -89,7 +89,7 @@
             
 			<section class="container container-grid" ng-controller="RecentController">
 				<hr/>
-				<h3>Recent</h3>
+				<h3>Most Recent Articles</h3>
 				<div class="row">
 					<div class="grid-item grid-item-4" ng-repeat="post in relatedPosts">
 						<figure class="grid-thumbnail">
