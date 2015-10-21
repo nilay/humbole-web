@@ -260,6 +260,8 @@ After adding following function, you can call json api with following url param
     foreach($ids as $id){
     	foreach($posts as $post){
     		if($post->id == $id){ 
+    			$post->content=''; 
+    			$post->excerpt=''; 
     			$sortedPosts[] = $post;
     		}
     	}
