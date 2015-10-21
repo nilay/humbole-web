@@ -86,7 +86,8 @@
 
 	<footer id="site-footer">
 		<div class="container container-footer">
-			<p>About Us</p>
+			<a href="/about-us">About Us</a> | 
+			<a href="/disclaimer">Disclaimer</a>
 		</div>
 	</footer>
 <script src="/config.js"></script>
