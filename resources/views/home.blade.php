@@ -19,7 +19,7 @@
 			</div>
 		</div>
 	
-	 <div ng-show='reddit.busy'>Loading data...</div>
+	 <center><div ng-show='reddit.busy'>Loading Articles...</div></center>
 	</div>
 </section>
 @stop
