@@ -137,8 +137,10 @@ app.controller("RelatedController", function($scope, $http, hSharedService) {
 	if(article_tags){
 		url+="&tags_slug="+article_tags;
 	}			
-	if(article_id){
-		url+="&not="+article_id;
+	if(typeof article_id != 'undefined'){
+		if(article_id.lenngth > 0){
+			url+="&not="+article_id;
+		}
 	}
 	$http.get(url).
 	    success(function(data, status, headers, config) {
@@ -151,8 +153,10 @@ app.controller("RelatedController", function($scope, $http, hSharedService) {
 
 app.controller("RecentController", function($scope, $http, hSharedService) {
 	var url = hSharedService.constructUrl(9,0);			
-	if(article_id){
-		url+="&not="+article_id;
+	if(typeof article_id != 'undefined'){
+		if(article_id.lenngth > 0){
+			url+="&not="+article_id;
+		}
 	}
 	$http.get(url).
 	    success(function(data, status, headers, config) {
