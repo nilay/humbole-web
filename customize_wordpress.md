@@ -180,7 +180,7 @@ After adding following function, you can call json api with following url param
 `
 
 ```
- public function get_humboles(){
+  public function get_humboles(){
 	global $wpdb;
 	global $json_api;
     $url = parse_url($_SERVER['REQUEST_URI']);
@@ -238,15 +238,21 @@ After adding following function, you can call json api with following url param
     $group_table = '';
     $group_clause = '';
     if(@$query['group_slug']){
-    $group_table = ", wp_groups, wp_group_relationships";
-    $group_clause = "and wp_posts.ID=wp_group_relationships.post_id " .
+    	$group_table = ", wp_groups, wp_group_relationships";
+    	$group_clause = "and wp_posts.ID=wp_group_relationships.post_id " .
     		"and wp_group_relationships.group_id = wp_groups.id " .
     		"and wp_groups.slug='{$query['group_slug']}'";
     	
     }
+
+    $not_clause ='';
+    if(@$query['not']){
+	    $not_clause = "and wp_posts.ID != {$query['not']} ";
+    }
+
     
     $select = "select wp_posts.ID, $score_generator_select from wp_posts $group_table " .
-    		"where post_status='publish' and post_type='post' " .
+    		"where post_status='publish' and post_type='post' $not_clause " .
     		"$cat_clause $tags_clause $group_clause $gender_clause $order $limit";
     
     
@@ -281,5 +287,6 @@ After adding following function, you can call json api with following url param
     return $result;
     
   }
+
 
 ```
