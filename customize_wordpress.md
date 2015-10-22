@@ -180,7 +180,7 @@ After adding following function, you can call json api with following url param
 `
 
 ```
-  public function get_humboles(){
+ public function get_humboles(){
 	global $wpdb;
 	global $json_api;
     $url = parse_url($_SERVER['REQUEST_URI']);
@@ -214,15 +214,25 @@ After adding following function, you can call json api with following url param
     
     $limit = @$query['offset'] ? " limit {$query['offset']}, $count" : " limit 0, $count" ;
     $order = " order by score desc";
-    $cat_table = "";
     $cat_clause = '';
-
-    if(@$query['cat_slug']){
-    	$cat_table = ", wp_terms, wp_term_relationships";
-    	$cat_clause = " and wp_posts.ID=wp_term_relationships.object_id  " .
-    			"and wp_term_relationships.term_taxonomy_id = wp_terms.term_id " .
-    			"and wp_terms.slug='{$query['cat_slug']}'";
-    } 
+    if(@$query['cat_slug'] ){
+    	$cat_clause = "and wp_posts.ID in (select wp_term_relationships.object_id from wp_terms, wp_term_relationships, wp_term_taxonomy ".
+    					"where wp_term_relationships.term_taxonomy_id = wp_terms.term_id ".
+    					"and wp_terms.term_id=wp_term_taxonomy.term_id ".
+    					"and wp_term_taxonomy.taxonomy='category' ".
+    					"and wp_terms.slug ='{$query['cat_slug']}') ";
+    }
+    
+    $tags_clause = '';
+    if(@$query['tags_slug'] ){
+		$tagsSlug = str_replace(",", "','", $query['tags_slug']);
+		$tagsSlug = "'$tagsSlug'";
+    	$tags_clause = "and wp_posts.ID in (select wp_term_relationships.object_id from wp_terms, wp_term_relationships, wp_term_taxonomy ".
+    					"where wp_term_relationships.term_taxonomy_id = wp_terms.term_id ".
+    					"and wp_terms.term_id=wp_term_taxonomy.term_id ".
+    					"and wp_term_taxonomy.taxonomy='post_tag' ".
+    					"and wp_terms.slug in ($tagsSlug)) ";
+    }
 
     
     $group_table = '';
@@ -235,9 +245,9 @@ After adding following function, you can call json api with following url param
     	
     }
     
-    $select = "select wp_posts.ID, $score_generator_select from wp_posts $cat_table $group_table " .
+    $select = "select wp_posts.ID, $score_generator_select from wp_posts $group_table " .
     		"where post_status='publish' and post_type='post' " .
-    		"$cat_clause $group_clause $gender_clause $order $limit";
+    		"$cat_clause $tags_clause $group_clause $gender_clause $order $limit";
     
     
     $post_ids = $wpdb->get_results( $select );
@@ -262,7 +272,7 @@ After adding following function, you can call json api with following url param
     		if($post->id == $id){ 
     			$post->content=''; 
     			$post->excerpt=''; 
-    			$sortedPosts[] = $post;
+			$sortedPosts[] = $post;
     		}
     	}
     }
