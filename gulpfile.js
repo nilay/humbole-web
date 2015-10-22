@@ -20,7 +20,9 @@ elixir(function(mix) {
     mix.scripts([
         'jquery.js',
         'bootstrap.js',
-        'angular.js'
+        'angular.js',
+        'ng-infinite-scroll.min.js',
+        'angular-sanitize.min.js'
     ]);
 });
 
