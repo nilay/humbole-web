@@ -16,7 +16,11 @@ class ArticleController extends Controller {
     	
     	// TODO: apply memcache here
     	// fetch article using REST API
-    	$cmsContent = file_get_contents(config('humbole.CMS_API_URL') . '/?json=get_post&post_slug=' . $slug);
+    	$cmsContent = @file_get_contents(config('humbole.CMS_API_URL') . '/?json=get_post&post_slug=' . $slug);
+    	if(!$cmsContent)
+    	{
+    		return view('errors.404');
+    	}
 		$cmsContentDecoded = json_decode($cmsContent);
 		
 		$tags = [];
