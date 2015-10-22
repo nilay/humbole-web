@@ -1,4 +1,4 @@
-var app = angular.module('app',['infinite-scroll']);
+var app = angular.module('app',['infinite-scroll', 'ngSanitize']);
 
 app.factory('hSharedService', function($rootScope) {
     var sharedService = {};
@@ -38,7 +38,7 @@ app.factory('hSharedService', function($rootScope) {
     return sharedService;
 });
 
-app.factory('Reddit', function($http, hSharedService) {
+app.factory('Reddit', function($http, hSharedService, $sce) {
   var Reddit = function() {
     this.sharedService = hSharedService;
     this.items = [];
@@ -49,6 +49,7 @@ app.factory('Reddit', function($http, hSharedService) {
   };
 
   Reddit.prototype.nextPage = function() {
+    
     if (this.busy) return;
     this.busy = true;
 	var count = this.offset == 0 ? 18 : 16;	
@@ -56,6 +57,7 @@ app.factory('Reddit', function($http, hSharedService) {
     
     $http.get(url).success(function(data) {
       for(var i = 0; i< data.posts.length; i++) {
+      	data.posts[i].title = $sce.trustAsHtml(data.posts[i].title);
         this.items.push(data.posts[i]);
       }
       this.page = Math.ceil(this.items.length/count) +1 ;
@@ -129,10 +131,11 @@ app.controller('HomeController', function($scope, Reddit, hSharedService) {
   $scope.reddit = new Reddit();
     $scope.$on('refreshGridView', function() {
         $scope.reddit.reStart();
-    });        
+    });
+    
 });
 
-app.controller("RelatedController", function($scope, $http, hSharedService) {
+app.controller("RelatedController", function($scope, $http, hSharedService, $sce) {
 	var url = hSharedService.constructUrl(3,0);
 	if(article_tags){
 		url+="&tags_slug="+article_tags;
@@ -145,6 +148,9 @@ app.controller("RelatedController", function($scope, $http, hSharedService) {
 	}
 	$http.get(url).
 	    success(function(data, status, headers, config) {
+	      for(var i = 0; i< data.posts.length; i++) {
+	      	data.posts[i].title = $sce.trustAsHtml(data.posts[i].title);
+	      }
 	      $scope.relatedPosts = data.posts;
 	    }).
 	    error(function(data, status, headers, config) {
@@ -152,7 +158,7 @@ app.controller("RelatedController", function($scope, $http, hSharedService) {
 	});
 });
 
-app.controller("RecentController", function($scope, $http, hSharedService) {
+app.controller("RecentController", function($scope, $http, hSharedService, $sce) {
 	var url = hSharedService.constructUrl(9,0);			
 	if(typeof article_id != 'undefined'){
 		if(article_id.length > 0){
@@ -161,6 +167,9 @@ app.controller("RecentController", function($scope, $http, hSharedService) {
 	}
 	$http.get(url).
 	    success(function(data, status, headers, config) {
+	      for(var i = 0; i< data.posts.length; i++) {
+	      	data.posts[i].title = $sce.trustAsHtml(data.posts[i].title);
+	      }
 	      $scope.relatedPosts = data.posts;
 	    }).
 	    error(function(data, status, headers, config) {
