@@ -16,7 +16,7 @@
             Nor any drop to drink.&quot;</p>
 
 
-            <p>Apart from our original article, we digg out the unseen best videos, images from the web and present you the best. We all know life is to short to see or read all. We are trying to give life a best shot by helping to see and experience the maximum best in the universe.</p>
+            <p>Apart from our original article, we digg out the unseen best videos, images from the web and present you the best. We all know life is too short to see or read all. We are trying to give life a best shot by helping you to see and experience the maximum best in the universe.</p>
 
             <p>Humbole is constantly changing and gets better with your participation – comment on the articles, send an email, suggest a topic, or ask a question and get involved!</p>
 
