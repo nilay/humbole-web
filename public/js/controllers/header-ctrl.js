@@ -136,10 +136,11 @@ app.controller("RelatedController", function($scope, $http, hSharedService) {
 	var url = hSharedService.constructUrl(3,0);
 	if(article_tags){
 		url+="&tags_slug="+article_tags;
-	}			
+	}	
 	if(typeof article_id != 'undefined'){
-		if(article_id.lenngth > 0){
+		if(article_id.length > 0){
 			url+="&not="+article_id;
+
 		}
 	}
 	$http.get(url).
@@ -154,7 +155,7 @@ app.controller("RelatedController", function($scope, $http, hSharedService) {
 app.controller("RecentController", function($scope, $http, hSharedService) {
 	var url = hSharedService.constructUrl(9,0);			
 	if(typeof article_id != 'undefined'){
-		if(article_id.lenngth > 0){
+		if(article_id.length > 0){
 			url+="&not="+article_id;
 		}
 	}
