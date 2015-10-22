@@ -47,27 +47,3 @@ function headerSetting(){
 		$('#header-placeholder').remove();
 	}
 }
-
-pageContext = function(){
-  	var gender = $('.onoffswitch-checkbox').is(':checked') ? 'male' : 'female';
-    var pathArray = window.location.pathname.split( '/' );
-    var group =  pathArray[2] ? pathArray[2] : null;
-    var topic =  pathArray[3] ? pathArray[3] : null;
-  	return {'gender': gender, 'group': group, 'topic':topic};
-}
-
-constructUrl=function(count, offset, extra){
-    var url = config.CMS_API_URL + "?json=get_humboles&count="+ count + "&offset=" + offset;
-	var context = pageContext();
-	
-	if(context.gender){url+= "&gender=" +  pageContext.gender;}
-	if(context.group){
-		if(context.group == "spinsters") context.group = "bachelors";
-		if(context.group == "ageless") context.group = "fourty-plus";
-		if(context.group == "career-woman") context.group = "techies";
-		url+= "&group_slug=" +  context.group;
-	}
-	if(context.topic){url+= "&cat_slug=" +  context.topic;}
-	if(extra){url+= extra;}	
-	return url;	
-  }

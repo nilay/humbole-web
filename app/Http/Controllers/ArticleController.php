@@ -18,14 +18,19 @@ class ArticleController extends Controller {
     	// fetch article using REST API
     	$cmsContent = file_get_contents(config('humbole.CMS_API_URL') . '/?json=get_post&post_slug=' . $slug);
 		$cmsContentDecoded = json_decode($cmsContent);
-		        
+		
+		$tags = [];
+		foreach($cmsContentDecoded->post->tags as $tag) {
+			$tags[] = $tag->slug;
+		}
+		$tags = implode(",", $tags);
         
         return view('article', [
         'title'=>$cmsContentDecoded->post->title . ' | Humbole',
         'og_title'=>$cmsContentDecoded->post->title,
         'og_url'=>'http://www.humbole.com/article/' . $cmsContentDecoded->post->slug,
-		'articleDetails'=>$cmsContentDecoded
-		
+		'articleDetails'=>$cmsContentDecoded,
+		'tags'=>$tags
 		]);
     }
 

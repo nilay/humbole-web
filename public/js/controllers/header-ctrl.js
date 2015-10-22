@@ -5,11 +5,42 @@ app.factory('hSharedService', function($rootScope) {
     sharedService.publishItem = function() {
         $rootScope.$broadcast('refreshGridView');
     };
+    
+    sharedService.getPageContext = function(){
+	  	var gender = $('.onoffswitch-checkbox').is(':checked') ? 'male' : 'female';
+	  	var group=null;
+	  	var topic=null;
+	    var pathArray = window.location.pathname.split( '/' );
+	    
+	    if(pathArray[1] == 'male' || pathArray[1]=='female'){
+		    group =  pathArray[2] ? pathArray[2] : null;
+		    topic =  pathArray[3] ? pathArray[3] : null;
+		}
+	  	return {'gender': gender, 'group': group, 'topic':topic};
+	}
+	
+  	sharedService.constructUrl=function(count, offset){
+	    var url = config.CMS_API_URL + "?json=get_humboles&count=" + count + "&offset=" + offset;
+		var pageContext = this.getPageContext();
+		
+		if(pageContext.gender){url+= "&gender=" +  pageContext.gender;}
+		if(pageContext.group){
+			if(pageContext.group == "spinsters") pageContext.group = "bachelors";
+			if(pageContext.group == "ageless") pageContext.group = "fourty-plus";
+			if(pageContext.group == "career-women") pageContext.group = "techies";
+			url+= "&group_slug=" +  pageContext.group;
+		}
+		if(pageContext.topic){url+= "&cat_slug=" +  pageContext.topic;}
+		return url;	
+	  }
+	
+    
     return sharedService;
 });
 
-app.factory('Reddit', function($http) {
+app.factory('Reddit', function($http, hSharedService) {
   var Reddit = function() {
+    this.sharedService = hSharedService;
     this.items = [];
     this.busy = false;
     this.page = 0;
@@ -20,8 +51,9 @@ app.factory('Reddit', function($http) {
   Reddit.prototype.nextPage = function() {
     if (this.busy) return;
     this.busy = true;
-	var count = 10;
-    var url = this.constructUrl();
+	var count = this.offset == 0 ? 18 : 16;	
+    var url = this.sharedService.constructUrl(count, this.offset);
+    
     $http.get(url).success(function(data) {
       for(var i = 0; i< data.posts.length; i++) {
         this.items.push(data.posts[i]);
@@ -32,21 +64,6 @@ app.factory('Reddit', function($http) {
     }.bind(this));
   };
 
-  Reddit.prototype.constructUrl=function(){
-  	var count = this.offset == 0 ? 18 : 16;
-    var url = config.CMS_API_URL + "?json=get_humboles&count=" + count + "&offset=" + this.offset;
-	var pageContext = this.getPageContext();
-	
-	if(pageContext.gender){url+= "&gender=" +  pageContext.gender;}
-	if(pageContext.group){
-		if(pageContext.group == "spinsters") pageContext.group = "bachelors";
-		if(pageContext.group == "ageless") pageContext.group = "fourty-plus";
-		if(pageContext.group == "career-women") pageContext.group = "techies";
-		url+= "&group_slug=" +  pageContext.group;
-	}
-	if(pageContext.topic){url+= "&cat_slug=" +  pageContext.topic;}
-	return url;	
-  }
   Reddit.prototype.clear = function() {
      this.items=[];
      this.page = 1;
@@ -59,13 +76,6 @@ app.factory('Reddit', function($http) {
   }
   
   
-  Reddit.prototype.getPageContext = function(){
-  	var gender = $('.onoffswitch-checkbox').is(':checked') ? 'male' : 'female';
-    var pathArray = window.location.pathname.split( '/' );
-    var group =  pathArray[2] ? pathArray[2] : null;
-    var topic =  pathArray[3] ? pathArray[3] : null;
-  	return {'gender': gender, 'group': group, 'topic':topic};
-  }
   
   return Reddit;
 });	
@@ -80,22 +90,22 @@ app.controller('HeaderController', function($scope, hSharedService) {
 		return $('.onoffswitch-checkbox').is(':checked') ? maleMenu : femaleMenu;
 	};
 
-  // change navigation menu based on gender selection	
-  $scope.genderChange = function(){
-  	$scope.menu = getMenuItems();
-  	// set cookies for gender. 
-  	var expires = new Date();
-    expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
-    document.cookie = 'gender=' + $scope.getGender() +';path=/'+ ';expires=' + expires.toUTCString();  	
-  	window.history.pushState('page2', $scope.getGender(), "/"+$scope.getGender());
-  	//$scope.$broadcast('re-start', null);
-  	hSharedService.publishItem();
-  };
+	// change navigation menu based on gender selection	
+	$scope.genderChange = function(){
+	  	$scope.menu = getMenuItems();
+	  	// set cookies for gender. 
+	  	var expires = new Date();
+	    expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
+	    document.cookie = 'gender=' + $scope.getGender() +';path=/'+ ';expires=' + expires.toUTCString();  	
+	  	window.history.pushState('page2', $scope.getGender(), "/"+$scope.getGender());
+	  	//$scope.$broadcast('re-start', null);
+	  	hSharedService.publishItem();
+	};
   
-  $scope.getSelectedGroup = function(){
-  	var context = pageContext();
-  	return context.group;
-  }  
+	$scope.getSelectedGroup = function(){
+	  	var context = hSharedService.getPageContext();
+	  	return context.group;
+	}  
 
 	$scope.appliedClass = function(menuName) {
 	    if (menuName.split('/')[2] === $scope.getSelectedGroup()) {
@@ -122,28 +132,35 @@ app.controller('HomeController', function($scope, Reddit, hSharedService) {
     });        
 });
 
-app.controller("RelatedController", function($scope, $http) {
-  var url = config.CMS_API_URL + "?json=get_humboles&count=3&offset=0";
-  $http.get(url).
-    success(function(data, status, headers, config) {
-      $scope.relatedPosts = data.posts;
-    }).
-    error(function(data, status, headers, config) {
-      // log error
-    });
+app.controller("RelatedController", function($scope, $http, hSharedService) {
+	var url = hSharedService.constructUrl(3,0);
+	if(article_tags){
+		url+="&tags_slug="+article_tags;
+	}			
+	if(article_id){
+		url+="&not="+article_id;
+	}
+	$http.get(url).
+	    success(function(data, status, headers, config) {
+	      $scope.relatedPosts = data.posts;
+	    }).
+	    error(function(data, status, headers, config) {
+	      // log error
+	});
 });
 
-app.controller("RecentController", function($scope, $http) {
-  var url = config.CMS_API_URL + "?json=get_humboles&count=9&offset=0";
-  $http.get(url).
-    success(function(data, status, headers, config) {
-      $scope.relatedPosts = data.posts;
-    }).
-    error(function(data, status, headers, config) {
-      // log error
-    });
-        
-    
+app.controller("RecentController", function($scope, $http, hSharedService) {
+	var url = hSharedService.constructUrl(9,0);			
+	if(article_id){
+		url+="&not="+article_id;
+	}
+	$http.get(url).
+	    success(function(data, status, headers, config) {
+	      $scope.relatedPosts = data.posts;
+	    }).
+	    error(function(data, status, headers, config) {
+	      // log error
+	});
 });	
 	
 

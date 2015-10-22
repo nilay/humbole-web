@@ -27,7 +27,10 @@
 
 
 @section("content")
-
+<script>
+var article_tags = "{{$tags}}";
+var article_id = "{{$articleDetails->post->id}}";
+</script>
 		<section id="site-contents">
 			<div class="container">
 				<div class="row">
@@ -64,7 +67,7 @@
 					
 					
 					<aside class="col-md-4" ng-controller="RelatedController">
-						<h3>Related Articles</h3>
+						<h4>Related Articles</h4>
 						<div class="grid-item" ng-repeat="post in relatedPosts">
 							<figure class="grid-thumbnail">
 								<span class="image-wrapper">
@@ -89,7 +92,7 @@
             
 			<section class="container container-grid" ng-controller="RecentController">
 				<hr/>
-				<h3>Most Recent Articles</h3>
+				<h4>Most Recent Articles</h4>
 				<div class="row">
 					<div class="grid-item grid-item-4" ng-repeat="post in relatedPosts">
 						<figure class="grid-thumbnail">
