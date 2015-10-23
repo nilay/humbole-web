@@ -42,10 +42,76 @@
           							<div class="image-description">
           								<h2 class="image-title"><b>Nilay Anand</b></h2>
           								<div class="image-category">
-          									<a class="ng-binding">CEO</a>
+          									<a class="ng-binding">CEO, Co-founder</a>
           								</div>
           							</div>
           						</div><!-- end ngRepeat: post in relatedPosts -->
+          						          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item ng-scope">
+          							<figure class="grid-thumbnail">
+          								<span class="image-wrapper">
+          										<img width="100%" height="100%" ng-src="http://humbole.com/images/drishty_chopra.jpg" src="http://humbole.com/images/drishty_chopra.jpg">
+          								</span>
+          							</figure>
+          							<div class="image-description">
+          								<h2 class="image-title"><b>Drishty Chopra</b></h2>
+          								<div class="image-category">
+          									<a class="ng-binding">Media Manager, Co-founder</a>
+          								</div>
+          							</div>
+          						</div><!-- end ngRepeat: post in relatedPosts -->
+          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item ng-scope">
+          							<figure class="grid-thumbnail">
+          								<span class="image-wrapper">
+          										<img width="100%" height="100%" ng-src="http://humbole.com/images/kiran_kumar.jpg" src="http://humbole.com/images/kiran_kumar.jpg">
+          								</span>
+          							</figure>
+          							<div class="image-description">
+          								<h2 class="image-title"><b>Kiran Kumar</b></h2>
+          								<div class="image-category">
+          									<a class="ng-binding">Media Activist, Co-founder</a>
+          								</div>
+          							</div>
+          						</div><!-- end ngRepeat: post in relatedPosts -->
+          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item ng-scope">
+          							<figure class="grid-thumbnail">
+          								<span class="image-wrapper">
+          										<img width="100%" height="100%" ng-src="http://humbole.com/images/vineet_k.jpg" src="http://humbole.com/images/vineet_k.jpg">
+          								</span>
+          							</figure>
+          							<div class="image-description">
+          								<h2 class="image-title"><b>Vineet Kumar</b></h2>
+          								<div class="image-category">
+          									<a class="ng-binding">Senior Developer</a>
+          								</div>
+          							</div>
+          						</div><!-- end ngRepeat: post in relatedPosts -->
+          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item ng-scope">
+          							<figure class="grid-thumbnail">
+          								<span class="image-wrapper">
+          										<img width="100%" height="100%" ng-src="http://humbole.com/images/ricky_p.jpg" src="http://humbole.com/images/ricky_p.jpg">
+          								</span>
+          							</figure>
+          							<div class="image-description">
+          								<h2 class="image-title"><b>Ricky Pukhrambam</b></h2>
+          								<div class="image-category">
+          									<a class="ng-binding">Content Programmer</a>
+          								</div>
+          							</div>
+          						</div><!-- end ngRepeat: post in relatedPosts -->
+          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item ng-scope">
+          							<figure class="grid-thumbnail">
+          								<span class="image-wrapper">
+          										<img width="100%" height="100%" ng-src="http://humbole.com/images/chandani.jpg" src="http://humbole.com/images/chandani.jpg">
+          								</span>
+          							</figure>
+          							<div class="image-description">
+          								<h2 class="image-title"><b>Chandani Sapra</b></h2>
+          								<div class="image-category">
+          									<a class="ng-binding">Content Programmer</a>
+          								</div>
+          							</div>
+          						</div><!-- end ngRepeat: post in relatedPosts -->
+                      
           					</aside>
 				</div>
             </div>
