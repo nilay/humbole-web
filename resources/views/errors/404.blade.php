@@ -3,7 +3,7 @@
 @section("content")
 <section class="container container-grid">
 	
-	<h3> <center>Ouch ...sorry we can't find the page you're looking for. But we have some super awesome articles you may like to experience and share with your friends. Check it out:<center> </h3> 
+	<h3> <center>Ouch ...sorry we can't find the page you're looking for. But we have some super awesome articles you may like to experience and share with your friends. <br>Check it out:<center> </h3> 
 
 
 </section>

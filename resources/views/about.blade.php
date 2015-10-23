@@ -32,9 +32,24 @@
 					
 					
 					
-					<aside class="col-md-4" ng-controller="RelatedController">
-						<!--h3>Column</h3-->
-					</aside>
+          <aside ng-controller="RelatedController" class="col-md-4 ng-scope">
+          						<h4>Team</h4>
+          						<!-- ngRepeat: post in relatedPosts --><div ng-repeat="post in relatedPosts" class="grid-item ng-scope">
+          							<figure class="grid-thumbnail">
+          								<span class="image-wrapper">
+          									<a href="/article/new-3d-snake-painting-looks-like-its-primed-to-pounce-off-the-page">
+          										<img width="100%" height="100%" ng-src="http://cms.humbole.com/wp-content/uploads/2015/10/Snake3-e1445252255550-299x177.jpg" src="http://cms.humbole.com/wp-content/uploads/2015/10/Snake3-e1445252255550-299x177.jpg">
+          									</a>
+          								</span>
+          							</figure>
+          							<div class="image-description">
+          								<h2 class="image-title">Nilay Anand</h2>
+          								<div class="image-category">
+          									<a class="ng-binding"></a>
+          								</div>
+          							</div>
+          						</div><!-- end ngRepeat: post in relatedPosts -->
+          					</aside>
 				</div>
             </div>
 		</section>
