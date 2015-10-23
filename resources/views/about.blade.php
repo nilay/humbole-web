@@ -57,7 +57,7 @@
           							<div class="image-description">
           								<h2 class="image-title"><b>Kiran Kumar</b></h2>
           								<div class="image-category">
-          									<a class="ng-binding">Media Activist, Co-founder</a>
+          									<a class="ng-binding">CMO, Media Activist, Co-founder</a>
           								</div>
           							</div>
           						</div><!-- end ngRepeat: post in relatedPosts -->
@@ -108,7 +108,7 @@
           								</span>
           							</figure>
           							<div class="image-description">
-          								<h2 class="image-title"><b>Chandani Sapra</b></h2>
+          								<h2 class="image-title"><b>Chandni Sapra</b></h2>
           								<div class="image-category">
           									<a class="ng-binding">Content Programmer</a>
           								</div>
