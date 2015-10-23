@@ -31,15 +31,12 @@
 					</div>
 					
 					
-					
           <aside ng-controller="RelatedController" class="col-md-4 ng-scope">
           						<h2 class="page-heading">Team</h2>
-          						<!-- ngRepeat: post in relatedPosts --><div ng-repeat="post in relatedPosts" class="grid-item ng-scope">
+          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item ng-scope">
           							<figure class="grid-thumbnail">
           								<span class="image-wrapper">
-          									<a href="/article/new-3d-snake-painting-looks-like-its-primed-to-pounce-off-the-page">
           										<img width="100%" height="100%" ng-src="http://humbole.com/images/nilay_anand.jpg" src="http://humbole.com/images/nilay_anand.jpg">
-          									</a>
           								</span>
           							</figure>
           							<div class="image-description">
