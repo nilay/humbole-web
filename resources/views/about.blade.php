@@ -46,19 +46,6 @@
           								</div>
           							</div>
           						</div><!-- end ngRepeat: post in relatedPosts -->
-          						          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item ng-scope">
-          							<figure class="grid-thumbnail">
-          								<span class="image-wrapper">
-          										<img width="100%" height="100%" ng-src="http://humbole.com/images/drishty_chopra.jpg" src="http://humbole.com/images/drishty_chopra.jpg">
-          								</span>
-          							</figure>
-          							<div class="image-description">
-          								<h2 class="image-title"><b>Drishty Chopra</b></h2>
-          								<div class="image-category">
-          									<a class="ng-binding">Media Manager, Co-founder</a>
-          								</div>
-          							</div>
-          						</div><!-- end ngRepeat: post in relatedPosts -->
           						<!-- ngRepeat: post in relatedPosts --><div class="grid-item ng-scope">
           							<figure class="grid-thumbnail">
           								<span class="image-wrapper">
@@ -72,6 +59,20 @@
           								</div>
           							</div>
           						</div><!-- end ngRepeat: post in relatedPosts -->
+          						          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item ng-scope">
+          							<figure class="grid-thumbnail">
+          								<span class="image-wrapper">
+          										<img width="100%" height="100%" ng-src="http://humbole.com/images/drishty_chopra.jpg" src="http://humbole.com/images/drishty_chopra.jpg">
+          								</span>
+          							</figure>
+          							<div class="image-description">
+          								<h2 class="image-title"><b>Drishty Chopra</b></h2>
+          								<div class="image-category">
+          									<a class="ng-binding">Media Manager, Co-founder</a>
+          								</div>
+          							</div>
+          						</div><!-- end ngRepeat: post in relatedPosts -->
+          						
           						<!-- ngRepeat: post in relatedPosts --><div class="grid-item ng-scope">
           							<figure class="grid-thumbnail">
           								<span class="image-wrapper">
