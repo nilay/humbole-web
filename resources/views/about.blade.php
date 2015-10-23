@@ -33,19 +33,19 @@
 					
 					
           <aside ng-controller="RelatedController" class="col-md-4 ng-scope">
-          						<h4>Team</h4>
+          						<h2 class="page-heading">Team</h2>
           						<!-- ngRepeat: post in relatedPosts --><div ng-repeat="post in relatedPosts" class="grid-item ng-scope">
           							<figure class="grid-thumbnail">
           								<span class="image-wrapper">
           									<a href="/article/new-3d-snake-painting-looks-like-its-primed-to-pounce-off-the-page">
-          										<img width="100%" height="100%" ng-src="http://cms.humbole.com/wp-content/uploads/2015/10/Snake3-e1445252255550-299x177.jpg" src="http://cms.humbole.com/wp-content/uploads/2015/10/Snake3-e1445252255550-299x177.jpg">
+          										<img width="100%" height="100%" ng-src="http://humbole.com/images/nilay_anand.jpg" src="http://humbole.com/images/nilay_anand.jpg">
           									</a>
           								</span>
           							</figure>
           							<div class="image-description">
-          								<h2 class="image-title">Nilay Anand</h2>
+          								<h2 class="image-title"><b>Nilay Anand</b></h2>
           								<div class="image-category">
-          									<a class="ng-binding"></a>
+          									<a class="ng-binding">CEO</a>
           								</div>
           							</div>
           						</div><!-- end ngRepeat: post in relatedPosts -->
