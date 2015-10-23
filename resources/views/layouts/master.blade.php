@@ -93,7 +93,6 @@
 <script src="/config.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript" src="/js/controllers/header-ctrl.js"></script>
-<script src="/js/ng-infinite-scroll.min.js"></script>
 
 @yield('additional_script')
 @yield('additional_script2')

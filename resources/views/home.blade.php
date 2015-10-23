@@ -14,7 +14,7 @@
 				</span>
 			</figure>
 			<div class="image-description">
-				<h2 class="image-title"><a href="/article/@{{album.slug}}">@{{album.title}}</a></h2>
+				<h2 class="image-title"><a href="/article/@{{album.slug}}" ng-bind-html="album.title"></a></h2>
 				<div class="image-category"><a href="/topic/@{{album.categories[0].slug}}">@{{album.categories[0].title}}</a>&nbsp;</div>
 			</div>
 		</div>
