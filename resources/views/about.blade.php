@@ -31,9 +31,11 @@
 					</div>
 					
 					
-          <aside ng-controller="RelatedController" class="col-md-4 ng-scope">
+          
+            <section ng-controller="RecentController" class="container container-grid ng-scope">
+            				<hr>
           						<h2 class="page-heading">Team</h2>
-          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item ng-scope">
+          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item grid-item-4 ng-scope">
           							<figure class="grid-thumbnail">
           								<span class="image-wrapper">
           										<img width="100%" height="100%" ng-src="http://humbole.com/images/nilay_anand.jpg" src="http://humbole.com/images/nilay_anand.jpg">
@@ -46,7 +48,7 @@
           								</div>
           							</div>
           						</div><!-- end ngRepeat: post in relatedPosts -->
-          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item ng-scope">
+          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item grid-item-4 ng-scope">
           							<figure class="grid-thumbnail">
           								<span class="image-wrapper">
           										<img width="100%" height="100%" ng-src="http://humbole.com/images/kiran_kumar.jpg" src="http://humbole.com/images/kiran_kumar.jpg">
@@ -59,7 +61,7 @@
           								</div>
           							</div>
           						</div><!-- end ngRepeat: post in relatedPosts -->
-          						          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item ng-scope">
+          						          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item grid-item-4 ng-scope">
           							<figure class="grid-thumbnail">
           								<span class="image-wrapper">
           										<img width="100%" height="100%" ng-src="http://humbole.com/images/drishty_chopra.jpg" src="http://humbole.com/images/drishty_chopra.jpg">
@@ -73,7 +75,7 @@
           							</div>
           						</div><!-- end ngRepeat: post in relatedPosts -->
           						
-          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item ng-scope">
+          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item grid-item-4 ng-scope">
           							<figure class="grid-thumbnail">
           								<span class="image-wrapper">
           										<img width="100%" height="100%" ng-src="http://humbole.com/images/vineet_k.jpg" src="http://humbole.com/images/vineet_k.jpg">
@@ -86,7 +88,7 @@
           								</div>
           							</div>
           						</div><!-- end ngRepeat: post in relatedPosts -->
-          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item ng-scope">
+          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item grid-item-4 ng-scope">
           							<figure class="grid-thumbnail">
           								<span class="image-wrapper">
           										<img width="100%" height="100%" ng-src="http://humbole.com/images/ricky_p.jpg" src="http://humbole.com/images/ricky_p.jpg">
@@ -99,7 +101,7 @@
           								</div>
           							</div>
           						</div><!-- end ngRepeat: post in relatedPosts -->
-          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item ng-scope">
+          						<!-- ngRepeat: post in relatedPosts --><div class="grid-item grid-item-4 ng-scope">
           							<figure class="grid-thumbnail">
           								<span class="image-wrapper">
           										<img width="100%" height="100%" ng-src="http://humbole.com/images/chandani.jpg" src="http://humbole.com/images/chandani.jpg">
@@ -113,7 +115,7 @@
           							</div>
           						</div><!-- end ngRepeat: post in relatedPosts -->
                       
-          					</aside>
+          					</section>
 				</div>
             </div>
 		</section>
