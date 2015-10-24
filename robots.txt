@@ -1,0 +1,2 @@
+Sitemap: http://www.humbole.com/sitemap.xml
+User-agent: *
