@@ -29,6 +29,8 @@ Route::get('article/{slug}', 'ArticleController@index');
 Route::get('about-us', function () {
     return view('about');
 });
+
+Route::get('sitemap.xml', 'SitemapController@generate');
 Route::get('disclaimer', function () {
     return view('disclaimer');
 });
