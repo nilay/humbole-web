@@ -53,10 +53,9 @@ var article_id = "{{$articleDetails->post->id}}";
 						<p class="article-social-sharing">
 							<span class="sharing-count"><strong>1005</strong><br />shares</span>
 							<a href="https://www.facebook.com/sharer/sharer.php?u=http://humbole.com/article/{{ $articleDetails->post->slug }}&title={{ $articleDetails->post->title }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="icon-facebook"></a>
-							<a href="https://twitter.com/intent/tweet?text={{ $articleDetails->post->title }}&url=http://humbole.com/article/{{ $articleDetails->post->slug }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="icon-twitter"></a>
+							<a href="http://twitter.com/share?url=http://humbole.com/article/{{ $articleDetails->post->slug }}&text={{ $articleDetails->post->title }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="icon-twitter"></a>
 							<a href="https://plus.google.com/share?url=http://humbole.com/article/{{ $articleDetails->post->slug }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="icon-google-plus"></a>
-							<!--<a href="#" class="icon-envelope-o"></a>-->
-							<a href="#" class="icon-envelope-o"></a>
+							<a href="mailto:?to=&body=%0D%0Ahttp://humbole.com/article/{{ $articleDetails->post->slug }}%0D%0A%0D%0AHumbole.com&subject={{ $articleDetails->post->title }}" class="icon-envelope-o"></a>
 						</p>
 
 
