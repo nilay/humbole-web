@@ -51,11 +51,11 @@ var article_id = "{{$articleDetails->post->id}}";
 						-->
 						
 						<p class="article-social-sharing">
-							<span class="sharing-count"><strong>1005</strong><br />shares</span>
-							<a href="https://www.facebook.com/sharer/sharer.php?u=http://humbole.com/article/{{ $articleDetails->post->slug }}&title={{ $articleDetails->post->title }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="icon-facebook"></a>
-							<a href="http://twitter.com/share?url=http://humbole.com/article/{{ $articleDetails->post->slug }}&text={{ $articleDetails->post->title }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="icon-twitter"></a>
-							<a href="https://plus.google.com/share?url=http://humbole.com/article/{{ $articleDetails->post->slug }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="icon-google-plus"></a>
-							<a href="mailto:?to=&body=%0D%0Ahttp://humbole.com/article/{{ $articleDetails->post->slug }}%0D%0A%0D%0AHumbole.com&subject={{ $articleDetails->post->title }}" class="icon-envelope-o"></a>
+							<span class="sharing-count"><strong><span class="changeNumber">{{ $share_count }}</span></strong><br />shares</span>
+							<a href="https://www.facebook.com/sharer/sharer.php?u=http://humbole.com/article/{{ $articleDetails->post->slug }}&title={{ $articleDetails->post->title }}" onclick="return share_social(this.href,{{$articleDetails->post->id}},1);" class="icon-facebook"></a>
+							<a href="http://twitter.com/share?url=http://humbole.com/article/{{ $articleDetails->post->slug }}&text={{ $articleDetails->post->title }}"onclick="return share_social(this.href,{{$articleDetails->post->id}},2);" class="icon-twitter"></a>
+							<a href="https://plus.google.com/share?url=http://humbole.com/article/{{ $articleDetails->post->slug }}" onclick="return share_social(this.href,{{$articleDetails->post->id}},3);" class="icon-google-plus"></a>
+							<a href="mailto:?to=&body=%0D%0Ahttp://humbole.com/article/{{ $articleDetails->post->slug }}%0D%0A%0D%0AHumbole.com&subject={{ $articleDetails->post->title }}" onclick="sendAjaxShareCount('{{$articleDetails->post->id}}','4');" class="icon-envelope-o"></a>
 						</p>
 
 
@@ -115,6 +115,17 @@ var article_id = "{{$articleDetails->post->id}}";
 		</div>
 	</section>
 
+<script>
+function share_social(url,page,type){
+	window.open(url,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
+	sendAjaxShareCount(page,type);
+	return false;	
+}
+function sendAjaxShareCount(page,type){
+	$.get("/article/sharecount/" + page);
+	$('.changeNumber').html(parseInt($('.changeNumber').html(), 10)+1)
+}
+</script>
 
 
 
