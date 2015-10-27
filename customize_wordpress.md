@@ -7,6 +7,9 @@ Execute following sql against your wordpress database:
 ```
 ALTER TABLE `wp_posts` ADD `post_gender` ENUM('universal','male','female','') NOT NULL DEFAULT 'universal' AFTER `comment_count`, ADD INDEX `gender` (`post_gender`);
 
+ALTER TABLE  `wp_posts` ADD  `share_count` INT( 10 ) UNSIGNED NOT NULL DEFAULT  '0',
+ADD  `view_count` INT( 10 ) UNSIGNED NOT NULL DEFAULT  '0';
+
 CREATE TABLE IF NOT EXISTS `wp_groups` (
   `id` int(10) unsigned NOT NULL,
   `name` varchar(200) NOT NULL,
