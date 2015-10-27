@@ -293,3 +293,19 @@ After adding following function, you can call json api with following url param
 
 
 ```
+
+Make following amendment under wp-content/plugins/json-api/models/post.php to make added field visible inside jso api response
+1. Add following code under the var declation part of JSON_API_Post class
+
+```
+  var $post_gender;		// String
+  var $share_count;		// Integer
+  var $view_count;		// Integer
+```
+2. Add Follwoing code under 'import_wp_object' method before 'do_action' is called
+
+```
+    $this->set_value('post_gender', $wp_post->post_gender);
+    $this->set_value('share_count', (int) $wp_post->share_count);
+    $this->set_value('view_count', (int) $wp_post->view_status);
+```
