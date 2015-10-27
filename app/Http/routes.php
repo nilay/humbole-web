@@ -26,6 +26,7 @@ Route::get('/{gender?}/{people?}/{topic?}', 'IndexController@index')->where('gen
 // Pass server config variables to client
 Route::get('config.js', 'ConfigController@makeConfig');
 Route::get('article/{slug}', 'ArticleController@index');
+Route::get('article/sharecount/{page}', 'ArticleController@shareCount');
 Route::get('about-us', function () {
     return view('about');
 });

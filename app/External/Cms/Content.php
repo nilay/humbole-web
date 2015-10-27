@@ -36,5 +36,29 @@
  		
  		return $cms;
  	}
+	
+	public function updateShareCount($post_id){		
+		$resultSet = mysqli_query($this->con, "UPDATE `wp_posts` SET `share_count` = `share_count` + 1 WHERE `id` = '$post_id';");
+	}
+	
+	public function updateViewCount($post_id){		
+		$resultSet = mysqli_query($this->con, "UPDATE `wp_posts` SET `view_count` = `view_count` + 1 WHERE `id` = '$post_id';");
+	}
+	
+	public function getShareCount($post_id){		
+		$resultSet = mysqli_query($this->con, "select share_count from wp_posts WHERE `id` = '$post_id';");
+		if(!$resultSet)
+ 		{
+ 			throw new \Exception("Error executing mysql query");
+ 		}
+		
+		$shares = mysqli_fetch_object($resultSet);
+		mysqli_free_result($resultSet);
+		if(empty($shares->share_count)){
+			return 0;
+		}
+		
+		return $shares->share_count;
+	}
  	
  }
