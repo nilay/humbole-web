@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{$description or 'Your Daily Dose'}}">
     <meta content="{{$title or 'Humbole | Your Daily Dose...'}}" name="title">
-	<meta content="{{$og_title or 'Humbole | Your Daily Dose...'}}" property="og:title">
-	<meta content="{{$og_description or 'Humbole | Your Daily Dose...'}}" property="og:description">
-	<meta content="website" property="og:type">
-	<meta content="{{$og_url or 'http://www.humbole.com'}}" property="og:url">
-	<meta content="Humbole" property="og:site_name">
-	@yield('additional_meta')
+	  <meta content="{{$og_title or 'Humbole | Your Daily Dose...'}}" property="og:title">
+	  <meta content="{{$og_description or 'Humbole | Your Daily Dose...'}}" property="og:description">
+	  <meta content="website" property="og:type">
+	  <meta content="{{$og_url or 'http://www.humbole.com'}}" property="og:url">
+	  <meta content="Humbole" property="og:site_name">
+	  @yield('additional_meta')
 	<!-- core CSS -->
-	<link rel="stylesheet" href="{{ elixir('css/app.css') }}">
-	<link rel="stylesheet" href="/css/icomoon.css">
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel="shortcut icon" href="/images/humbole.ico">
-	@yield('additional_css')  
-	<script src="{{ elixir('js/all.js') }}"></script>
-	
+	  <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
+	  <link rel="stylesheet" href="/css/icomoon.css">
+	  <link rel="stylesheet" href="/css/style.css">
+	  <link rel="shortcut icon" href="/images/humbole.ico">
+	  @yield('additional_css')  
+	  <script src="{{ elixir('js/all.js') }}"></script>
+	  <meta name="google-site-verification" content="EolzaqHCB-lMnXwXwVBoOnmfmSJxAndVbdxx2f2q1Yk" />
 </head><!--/head-->
 
 <body id="home" class="homepage" >
