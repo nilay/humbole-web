@@ -53,7 +53,7 @@ var article_id = "{{$articleDetails->post->id}}";
 						<p class="article-social-sharing">
 							<span class="sharing-count"><strong><span class="changeNumber">{{ $share_count }}</span></strong><br />shares</span>
 							<a href="https://www.facebook.com/sharer/sharer.php?u=http://humbole.com/article/{{ $articleDetails->post->slug }}&title={{ $articleDetails->post->title }}" onclick="return share_social(this.href,{{$articleDetails->post->id}},1);" class="icon-facebook"></a>
-							<a href="http://twitter.com/share?url=http://humbole.com/article/{{ $articleDetails->post->slug }}&text={{ $articleDetails->post->title }}"onclick="return share_social(this.href,{{$articleDetails->post->id}},2);" class="icon-twitter"></a>
+							<a href="http://twitter.com/share?url=http://humbole.com/article/{{ $articleDetails->post->slug }}&text={{ $articleDetails->post->title }}" onclick="return share_social(this.href,{{$articleDetails->post->id}},2);" class="icon-twitter"></a>
 							<a href="https://plus.google.com/share?url=http://humbole.com/article/{{ $articleDetails->post->slug }}" onclick="return share_social(this.href,{{$articleDetails->post->id}},3);" class="icon-google-plus"></a>
 							<a href="mailto:?to=&body=%0D%0Ahttp://humbole.com/article/{{ $articleDetails->post->slug }}%0D%0A%0D%0AHumbole.com&subject={{ $articleDetails->post->title }}" onclick="sendAjaxShareCount('{{$articleDetails->post->id}}','4');" class="icon-envelope-o"></a>
 						</p>
@@ -85,6 +85,16 @@ var article_id = "{{$articleDetails->post->id}}";
 						</div>
 				
 					</aside>
+				</div>
+				
+				<div class="row mtop-art">
+					<p class="article-social-sharing">
+						<span class="sharing-count"><strong><span class="changeNumber">{{ $share_count }}</span></strong><br />shares</span>
+						<a href="https://www.facebook.com/sharer/sharer.php?u=http://humbole.com/article/{{ $articleDetails->post->slug }}&title={{ $articleDetails->post->title }}" onclick="return share_social(this.href,{{$articleDetails->post->id}},1);" class="icon-facebook"></a>
+						<a href="http://twitter.com/share?url=http://humbole.com/article/{{ $articleDetails->post->slug }}&text={{ $articleDetails->post->title }}" onclick="return share_social(this.href,{{$articleDetails->post->id}},2);" class="icon-twitter"></a>
+						<a href="https://plus.google.com/share?url=http://humbole.com/article/{{ $articleDetails->post->slug }}" onclick="return share_social(this.href,{{$articleDetails->post->id}},3);" class="icon-google-plus"></a>
+						<a href="mailto:?to=&body=%0D%0Ahttp://humbole.com/article/{{ $articleDetails->post->slug }}%0D%0A%0D%0AHumbole.com&subject={{ $articleDetails->post->title }}" onclick="sendAjaxShareCount('{{$articleDetails->post->id}}','4');" class="icon-envelope-o"></a>
+					</p>
 				</div>
             </div>
             
