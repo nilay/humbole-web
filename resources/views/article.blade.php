@@ -47,21 +47,38 @@ var article_id = "{{$articleDetails->post->id}}";
 						</div>
 						
 						
-						<p class="article-social-sharing">
+						<p class="article-social-sharing share-top">
 							<span class="sharing-count"><strong><span class="changeNumber">{{ $share_count }}</span></strong><br />shares</span>
 							<a href="https://www.facebook.com/sharer/sharer.php?u=http://humbole.com/article/{{ $articleDetails->post->slug }}&title={{ $articleDetails->post->title }}" onclick="return share_social(this.href,{{$articleDetails->post->id}},1);" class="icon-facebook"></a>
 							<a href="http://twitter.com/share?url=http://humbole.com/article/{{ $articleDetails->post->slug }}&text={{ $articleDetails->post->title }}" onclick="return share_social(this.href,{{$articleDetails->post->id}},2);" class="icon-twitter"></a>
 							<a href="https://plus.google.com/share?url=http://humbole.com/article/{{ $articleDetails->post->slug }}" onclick="return share_social(this.href,{{$articleDetails->post->id}},3);" class="icon-google-plus"></a>
 							<a href="mailto:?to=&body=%0D%0Ahttp://humbole.com/article/{{ $articleDetails->post->slug }}%0D%0A%0D%0AHumbole.com&subject={{ $articleDetails->post->title }}" onclick="sendAjaxShareCount('{{$articleDetails->post->id}}','4');" class="icon-envelope-o"></a>
 						</p>
-
+						
+						
+						
+						<ul class="share-sidebar sidebar article-social-sharing">
+							
+							<li><a href="https://www.facebook.com/sharer/sharer.php?u=http://humbole.com/article/{{ $articleDetails->post->slug }}&title={{ $articleDetails->post->title }}" onclick="return share_social(this.href,{{$articleDetails->post->id}},1);" class="icon-facebook"></a></li>
+							<li><a href="http://twitter.com/share?url=http://humbole.com/article/{{ $articleDetails->post->slug }}&text={{ $articleDetails->post->title }}" onclick="return share_social(this.href,{{$articleDetails->post->id}},2);" class="icon-twitter"></a></li>
+							<li><a href="https://plus.google.com/share?url=http://humbole.com/article/{{ $articleDetails->post->slug }}" onclick="return share_social(this.href,{{$articleDetails->post->id}},3);" class="icon-google-plus"></a></li>
+							<li><a href="mailto:?to=&body=%0D%0Ahttp://humbole.com/article/{{ $articleDetails->post->slug }}%0D%0A%0D%0AHumbole.com&subject={{ $articleDetails->post->title }}" onclick="sendAjaxShareCount('{{$articleDetails->post->id}}','4');" class="icon-envelope-o"></a>
+							</li>
+						</ul>
+						
+						
+						
+						
+						
+						
+						
 
 						<article>
 							{!! $articleDetails->post->content !!}
 						</article>
 						
 						<div class="mtop-art">
-						<p class="article-social-sharing">
+						<p class="article-social-sharing share-bottom">
 							<span class="sharing-count"><strong><span class="changeNumber">{{ $share_count }}</span></strong><br />shares</span>
 							<a href="https://www.facebook.com/sharer/sharer.php?u=http://humbole.com/article/{{ $articleDetails->post->slug }}&title={{ $articleDetails->post->title }}" onclick="return share_social(this.href,{{$articleDetails->post->id}},1);" class="icon-facebook"></a>
 							<a href="http://twitter.com/share?url=http://humbole.com/article/{{ $articleDetails->post->slug }}&text={{ $articleDetails->post->title }}" onclick="return share_social(this.href,{{$articleDetails->post->id}},2);" class="icon-twitter"></a>
@@ -75,7 +92,7 @@ var article_id = "{{$articleDetails->post->id}}";
 					
 					
 					
-					<aside class="col-md-4" ng-controller="RelatedController">
+					<aside class="col-md-4 related-articals" ng-controller="RelatedController">
 						<h4>Related Articles</h4>
 						<div class="grid-item" ng-repeat="post in relatedPosts">
 							<figure class="grid-thumbnail">
@@ -137,6 +154,22 @@ function sendAjaxShareCount(page,type){
 	$.get("/article/sharecount/" + page);
 	$('.changeNumber').html(parseInt($('.changeNumber').html(), 10)+1)
 }
+
+
+$(window).scroll(function(e) {
+	var artSahreTop = $('.share-top').offset();
+	var artSahreBottom = $('.share-bottom').offset();
+    if ($(window).scrollTop() > artSahreTop.top  && $(window).scrollTop() < artSahreBottom.top-$(window).height() && $(window).width() > 767)
+     {
+		$('.share-sidebar').fadeIn();
+     }
+    else
+     {
+		$('.share-sidebar').fadeOut();
+     }
+ });
+
+
 </script>
 
 
