@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Humbole</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Insurance management for your business, all online">
+    <meta name="description" content="Your daily dose...">
     <meta name="author" content="">
     <meta content="Humbole" name="title">
 	<meta content="Humbole" property="og:title">
