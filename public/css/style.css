@@ -151,6 +151,12 @@ aside .grid-item + .grid-item{margin-top:15px;}
 .mtop-art{margin:20px 0px;}
 .author-heading {font-size: 13px;margin-bottom:0px;}
 
+.share-sidebar{display:none;}
+.share-sidebar.sidebar{position:fixed; margin-left:-50px; top:170px; z-index: 1;}
+ul.share-sidebar{height: 46px; list-style: outside none none; margin: 0; padding: 0;}
+ul.share-sidebar li a {cursor: pointer;display: inline-block;margin: 4px 5px 0 0;}
+
+
 @media screen and (max-width:767px){
 	#site-header{background:#3c7dc9;}
 	.user-female #site-header{background:#f6358a;}
@@ -167,5 +173,6 @@ aside .grid-item + .grid-item{margin-top:15px;}
 	#site-header .navbar-collapse{background:rgba(60,125,201,.9); display:block; height:auto!important; left:-100%; margin:0; position:absolute; transition:all .4s linear; width:100%; z-index:9;}
 	#site-header .navbar-collapse.in{left:0;}
 	.user-female #site-header .navbar-collapse{background:rgba(246,53,138,.9);}
+	.related-articals{display:none;}
 }
 
