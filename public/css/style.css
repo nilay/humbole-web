@@ -149,6 +149,7 @@ aside .grid-item + .grid-item{margin-top:15px;}
 .article-social-sharing .icon-google-plus:hover{background:#C12D22;}
 .article-social-sharing .icon-envelope-o:hover{background:#1377C4;}
 .mtop-art{margin:20px 0px;}
+.author-heading {font-size: 13px;margin-bottom:0px;}
 
 @media screen and (max-width:767px){
 	#site-header{background:#3c7dc9;}
