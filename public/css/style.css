@@ -143,7 +143,7 @@ aside .grid-item + .grid-item{margin-top:15px;}
 .article-social-sharing .icon-facebook{background:#45649D; border-color:#37578E; color:#fff;}
 .article-social-sharing .icon-twitter{background:#5BC9EE; border-color:#4AB7DB; color:#fff;}
 .article-social-sharing .icon-google-plus{background:#D53B2F; border-color:#C12D22; color:#fff;}
-.article-social-sharing .icon-envelope-o{background:#1D84D3; border-color:#1377C4; color:#fff; width:38px;}
+.article-social-sharing .icon-envelope-o{background:#1D84D3; border-color:#1377C4; color:#fff;}
 .article-social-sharing .icon-facebook:hover{background:#37578E;}
 .article-social-sharing .icon-twitter:hover{background:#4AB7DB;}
 .article-social-sharing .icon-google-plus:hover{background:#C12D22;}

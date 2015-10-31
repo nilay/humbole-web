@@ -36,13 +36,14 @@ var article_id = "{{$articleDetails->post->id}}";
 				<div class="row">
 					<div class="col-md-8">
 						<h2 class="page-heading">{{ $articleDetails->post->title }}</h2>
-						<div class="media">							
-							<div class="media-left">								
+						<div class="media">		
+							
+							<!--<div class="media-left">								
 									<a href="#"><img class="media-object img-circle" src="http://placehold.it/40?text=A" alt="..."></a>								
-							</div>							
+							</div>-->							
 							<div class="media-body">
 								<h4 class="media-heading author-heading">by {{ ucwords($articleDetails->post->author->name) }}</h4>
-								<p><small>Published on {{  date('F d \,  Y \,  h:i A',strtotime($articleDetails->post->date)) }}</small></p>
+								<p><small>Published on {{  date('F d \,  Y',strtotime($articleDetails->post->date)) }}</small></p>
 							</div>
 						</div>
 						
